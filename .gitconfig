@@ -36,7 +36,6 @@
 
 [merge]
   tool = vimdiff
-  ff = no
 
 [core]
   excludesFile = ~/.gitignore
