@@ -1,1 +1,1 @@
-gem: --no-decument
+gem: --no-ri --no-rdoc
