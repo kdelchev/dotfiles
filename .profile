@@ -7,6 +7,9 @@ export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Ho
 # Allow [ or ] whereever you want; https://github.com/thoughtbot/dotfiles/blob/master/zshrc#L43
 unsetopt nomatch
 
+# Do not share history between tabs
+unsetopt share_history
+
 alias a='alias'
 
 [[ -r ~/.passwords ]] && . ~/.passwords
