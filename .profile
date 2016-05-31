@@ -14,3 +14,7 @@ unsetopt share_history
 alias a='alias'
 
 [[ -r ~/.passwords ]] && . ~/.passwords
+
+
+LDFLAGS:  -L/usr/local/opt/openssl/lib
+CPPFLAGS: -I/usr/local/opt/openssl/include
