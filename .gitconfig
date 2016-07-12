@@ -1,6 +1,6 @@
 [user]
-	name = Konstantin Delchev
-	email = konstantin.delchev@shore.com
+  name = Konstantin Delchev
+  email = konstantin.delchev@shore.com
 
 [diff]
 [color]
@@ -39,12 +39,12 @@
   ff = no
 
 [core]
-	excludesfile = /Users/kode/.gitignore
+  excludesfile = /Users/kode/.gitignore
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [difftool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-	trustExitCode = true
+  cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+  trustExitCode = true
