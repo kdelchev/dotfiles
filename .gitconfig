@@ -35,16 +35,10 @@
   default = simple
 
 [merge]
-  tool = kdiff3
   ff = no
+  tool = kdiff3
 
 [core]
-  excludesfile = /Users/kode/.gitignore
+  excludesfile = ~/.gitignore # this is the global .gitignore
 [credential]
   helper = osxkeychain
-[difftool "sourcetree"]
-  cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
-  path = 
-[mergetool "sourcetree"]
-  cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-  trustExitCode = true
