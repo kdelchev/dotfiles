@@ -34,11 +34,29 @@
 [push]
   default = simple
 
+[core]
+  excludesfile = ~/.gitignore # this is the global .gitignore
+
+[credential]
+  helper = osxkeychain
+
 [merge]
   ff = no
   tool = kdiff3
 
-[core]
-  excludesfile = ~/.gitignore # this is the global .gitignore
-[credential]
-  helper = osxkeychain
+[mergetool]
+  keepBackup = false
+
+[mergetool "kdiff3"]
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+  trustExitCode = false
+
+[diff]
+  tool = kdiff3
+
+[difftool]
+  prompt = false
+
+[difftool "kdiff3"]
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+  trustExitCode = false

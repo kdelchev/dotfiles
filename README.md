@@ -7,3 +7,7 @@
     ln -s ~/workspace/dotfiles/.profile ~/.profile
     ln -s ~/workspace/dotfiles/.zshrc ~/.zshrc
     ln -s ~/workspace/dotfiles/vim/.vimrc ~/.vimrc
+
+# Requirements
+
+* [kdiff3](http://sourceforge.net/projects/kdiff3/files/kdiff3/)
