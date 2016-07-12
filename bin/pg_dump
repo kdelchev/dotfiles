@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+# Put this file in ~/bin and make it executable `chmod 755 ~/bin/pg_dump`
+program = '/Applications/Postgres.app/Contents/Versions/latest/bin/pg_dump'
+args = ARGV.reject{ |arg| arg == '-i' }.join(' ')
+`#{program} #{args}`
