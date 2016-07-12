@@ -2,7 +2,5 @@
 .DS_Store
 
 # Sublime Text - specific files:
-*.sublime-project
-*.sublime-workspace
 start_server.sh
 .irbrc
