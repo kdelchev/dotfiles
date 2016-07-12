@@ -2,4 +2,4 @@
 
 brew install qt the_silver_searcher rabbitmq redis elasticsearch vim rbenv ruby-build openssl
 
-brew cask install caffeine google-chrome iterm2 pgadmin3
+brew cask install caffeine google-chrome iterm2 pgadmin3 atom
