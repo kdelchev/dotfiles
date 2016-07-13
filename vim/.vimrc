@@ -139,6 +139,8 @@ set undodir=$HOME/.vim/undo   " where to save undo histories
 set undolevels=1000           " how many undos
 set undoreload=10000          " number of lines to save for undo
 set clipboard=unnamed         " used by easyclip to specify which clipboard to use
+set textwidth=80
+set colorcolumn=+1
 
 map <C-d> :Files<cr>
 map <C-b> :Buffers<cr>

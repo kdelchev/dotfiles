@@ -14,8 +14,8 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 * [NERDTree](https://github.com/scrooloose/nerdtree/blob/master/doc/NERD_tree.txt)
 * [vim-rails](https://github.com/tpope/vim-rails)
 
-## Research 
-* [vim-pathogen](https://github.com/tpope/vim-pathogen/) Manages runtimepath. 
+## Research
+* [vim-pathogen](https://github.com/tpope/vim-pathogen/) Manages runtimepath.
 
 ## Articles
 * [Package Managers](http://vi.stackexchange.com/questions/388/what-is-the-difference-between-the-vim-package-managers)
