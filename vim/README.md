@@ -23,6 +23,7 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 * [Distribution](https://github.com/carlhuda/janus)
 * [vimfiler](https://github.com/Shougo/vimfiler.vim)
 * [buffers-vs-tabs](https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/)
+* https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.1vw6xi8eh
 
 ## Example vimrc
 https://github.com/jbe/.vim/blob/master/vimrc
