@@ -1,12 +1,12 @@
 # Install
 
-    ln -s ~/workspace/dotfiles/.gitconfig ~/.gitconfig
-    ln -s ~/workspace/dotfiles/.gitignore ~/.gitignore
-    ln -s ~/workspace/dotfiles/.irbrc ~/.irbrc
-    ln -s ~/workspace/dotfiles/bin/pg_dump /usr/local/bin/pg_dump
-    ln -s ~/workspace/dotfiles/.profile ~/.profile
-    ln -s ~/workspace/dotfiles/.zshrc ~/.zshrc
-    ln -s ~/workspace/dotfiles/vim/.vimrc ~/.vimrc
+    ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+    ln -s ~/dotfiles/.gitignore ~/.gitignore
+    ln -s ~/dotfiles/.irbrc ~/.irbrc
+    ln -s ~/dotfiles/bin/pg_dump /usr/local/bin/pg_dump
+    ln -s ~/dotfiles/.profile ~/.profile
+    ln -s ~/dotfiles/.zshrc ~/.zshrc
+    ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
 
 # Requirements
 

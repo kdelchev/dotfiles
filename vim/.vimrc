@@ -1,7 +1,7 @@
 set nocompatible
 set encoding=utf-8 nobomb
 
-call plug#begin('~/workspace/dotfiles/vim/plugged')
+call plug#begin('~/dotfiles/vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'junegunn/fzf.vim'               " vim fzf plugin
