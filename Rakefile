@@ -2,7 +2,7 @@ dot_files = Dir['dotfiles/*']
 bin_files = Dir['bin/*']
 
 task :dot_files do
-  p 'Symlinking dotfiles'
+  p 'Symlinking dot files'
   dot_files.each do |file|
     path = File.join(File.dirname(__FILE__), file)
     name = File.basename(file)
