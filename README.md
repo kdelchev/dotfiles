@@ -3,9 +3,10 @@
 ## Install
 
     rake
-    ln -s ~/dotfiles/bin/pg_dump /usr/local/bin/pg_dump
 
 # Requirements
+
+TODO: move requirements into rake task
 
 * [kdiff3](http://sourceforge.net/projects/kdiff3/files/kdiff3/)
 
