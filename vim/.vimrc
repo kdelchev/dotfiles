@@ -1,4 +1,4 @@
-set nocompatible
+set nocompatible                      " turn off vi compatibility
 set encoding=utf-8 nobomb
 
 call plug#begin('~/dotfiles/vim/plugged')
@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-repeat'
 Plug 'svermeulen/vim-easyclip'        " copy to system clipboard
 Plug 'thoughtbot/vim-rspec'           " Run rspec inside vim
+Plug 'tpope/vim-endwise'              " end code structures
 
 call plug#end()              " required
 
@@ -73,6 +74,11 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 "let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
+" This should make vertical split resize depending on focus
+"set winwidth=85
+"set winminwidth=20
+"set winheight=15
+"set winminheight=5
 
 
 " APPEARANCE
@@ -82,7 +88,6 @@ set background=dark
 color default
 colorscheme Monokai
 
-set autoindent      " always set autoindenting on
 set autoread        " Auto read
 set autowrite
 set autowriteall    " Save on buffer switch
@@ -105,12 +110,13 @@ set viminfo='25,\"50,n~/.vim/.viminfo
 set splitright
 
 " DEFAULT TAB STOPS & INDENTING
-set tabstop=4
+set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set shiftround
 set autoindent
 set smartindent
+filetype indent on
 set expandtab
 set smarttab
 
