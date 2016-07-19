@@ -25,4 +25,9 @@ task :bin_files do
   end
 end
 
-task :default => [:dotfiles, :bin_files]
+task :plug do
+  system 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+end
+
+task :default => [:dot_files, :bin_files, :plug]
