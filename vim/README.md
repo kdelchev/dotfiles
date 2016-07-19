@@ -6,8 +6,7 @@
 ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 
-* Install [MarkView](https://chrome.google.com/webstore/detail/markview/iaddkimmopgchbbnmfmdcophmlnghkim?hl=en) & check `Allow access to file URLs` option
-* NERDTree shoretcuts https://gist.github.com/geekontheway/2667442
+* NERDTree shortcuts https://gist.github.com/geekontheway/2667442
 
 ## Tutorials
 * [Cheat Sheet](http://www.viemu.com/vi-vim-cheat-sheet.gif)
@@ -29,7 +28,3 @@ ln -s ~/.vim/.vimrc ~/.vimrc
 ## Example vimrc
 https://github.com/jbe/.vim/blob/master/vimrc
 https://github.com/junegunn/dotfiles/blob/master/vimrc
-
-
-github.com/junegunn/dotfiles/blob/master/vimrc
-
