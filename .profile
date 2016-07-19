@@ -1,4 +1,5 @@
 export PATH=~/bin:$PATH # https://gist.github.com/kdelchev/530ab8bf90ab5fe1f0758d3c2b7d4507
+export PATH="/usr/local/sbin:$PATH"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 export EDITOR=vim
