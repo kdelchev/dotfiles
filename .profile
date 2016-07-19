@@ -4,6 +4,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 export EDITOR=vim
 export DISABLE_SPRING=1
+export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 
 # Allow [ or ] whereever you want; https://github.com/thoughtbot/dotfiles/blob/master/zshrc#L43
 unsetopt nomatch
