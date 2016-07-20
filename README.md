@@ -2,7 +2,11 @@
 
 ## Install
 
+    # to symlink all config files
     rake
+
+    # to install vim-plug
+    rake plug
 
 # Requirements
 
