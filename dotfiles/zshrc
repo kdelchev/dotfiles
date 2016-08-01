@@ -58,6 +58,7 @@ plugins=(git bundler rails)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
+source ~/.environment
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
