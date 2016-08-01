@@ -99,7 +99,22 @@ if has("autocmd")
 
   " custom filetype syntax setting
   " autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
+
+  autocmd BufWritePre *.rb,*.js :call <SID>StripTrailingWhitespaces()
 endif
+
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
 
 set autoindent  " copy indentation from current line when starting new line
 set ignorecase  " ignore case in pattern
@@ -173,3 +188,10 @@ nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 
 " % - go to matching element do..end
 runtime macros/matchit.vim
+
+
+" Makes vim behave as textmate
+"nmap <D-[> <<
+"nmap <D-]> >>
+"vmap <D-[> <gv
+"vmap <D-]> >gv
