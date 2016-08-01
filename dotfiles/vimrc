@@ -200,3 +200,9 @@ runtime macros/matchit.vim
 "nmap <D-]> >>
 "vmap <D-[> <gv
 "vmap <D-]> >gv
+
+" Move between windows
+"map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-l> <C-w>l
