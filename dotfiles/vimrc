@@ -93,24 +93,28 @@ set viminfo='25,\"50,n~/.vim/.viminfo
 set splitright
 
 " DEFAULT TAB STOPS & INDENTING
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set shiftround
-set autoindent
-set smartindent
-filetype indent on
-set expandtab
-set smarttab
+
+" tabstop == softtabstop - work with tabs
+" softtabstop == shiftwidth - work with spaces
+set tabstop=2     " width of a tab character§
+set softtabstop=2 " set the amount of space to be inserted
+set shiftwidth=2  " set the amount of space to add/remove when indenting
+set expandtab     " use spaces instead tab characters
+set smarttab      " insert blanks in front of a line
+set smartindent   " smart autoindent on new line
+set shiftround    " round indent to multiple of shiftwidth
+
+set autoindent  " copy indentation from current line when starting new line
+set ignorecase  " ignore case in pattern
+set smartcase   " ignore case if only lower case letters in pattern
+set incsearch   " show pattern as you type
+set hlsearch    " highlight previous search
+
 
 set history=50
-set smartcase
 set ttyfast
 
-" SEARCH
-set ignorecase
-set incsearch
-"set hlsearch
+
 hi Search ctermbg=Yellow ctermfg=Black
 
 " TECHNICAL
