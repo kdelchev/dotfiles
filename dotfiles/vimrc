@@ -122,6 +122,12 @@ set smartcase   " ignore case if only lower case letters in pattern
 set incsearch   " show pattern as you type
 set hlsearch    " highlight previous search
 
+set hidden  " allows buffers to be switched without saving
+
+hi Search ctermbg=Yellow ctermfg=Black
+
+
+
 set laststatus=2    " always show statusline
 set ruler           " always show cursor position
 set showmode        " display curent mode
@@ -143,7 +149,6 @@ set ttyfast
 
 
 
-hi Search ctermbg=Yellow ctermfg=Black
 
 " TECHNICAL
 set mouse=a
