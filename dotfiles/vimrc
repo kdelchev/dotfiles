@@ -165,6 +165,8 @@ set undoreload=10000          " number of lines to save for undo
 set clipboard=unnamed         " used by easyclip to specify which clipboard to use
 set textwidth=80
 set colorcolumn=+1
+set cursorline
+
 
 "setlocal foldmethod=indent
 
@@ -206,3 +208,4 @@ runtime macros/matchit.vim
 "map <C-j> <C-w>j
 "map <C-k> <C-w>k
 "map <C-l> <C-w>l
+
