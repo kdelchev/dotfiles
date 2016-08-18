@@ -1,65 +1,98 @@
-set nocompatible                      " turn off vi compatibility
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
 set encoding=utf-8 nobomb
 
-
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'flazz/vim-colorschemes'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-surround'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'tpope/vim-repeat'
+  Plug 'svermeulen/vim-easyclip'
+  Plug 'tpope/vim-endwise'
+call plug#end()
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
-Plug 'junegunn/fzf.vim'               " vim fzf plugin
-Plug 'airblade/vim-gitgutter'         " shows git status
-Plug 'terryma/vim-multiple-cursors'
-Plug 'flazz/vim-colorschemes'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-ruby/vim-ruby'              " Complie ruby with vim
-Plug 'tpope/vim-rails'                " Plugin for rails
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-repeat'
-Plug 'svermeulen/vim-easyclip'        " copy to system clipboard
-Plug 'tpope/vim-endwise'              " end code structures
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
 
-call plug#end()              " required
+function! RunTests(filename)
+    " Write the file and run tests for the given filename
+    :w
+    :silent !echo;echo;echo;echo;echo
+    exec ":!bundle exec rspec " . a:filename
+endfunction
 
+function! SetTestFile()
+    " Set the spec file that tests will be run for.
+    let t:grb_test_file=@%
+endfunction
 
-"
+function! RunTestFile(...)
+    if a:0
+        let command_suffix = a:1
+    else
+        let command_suffix = ""
+    endif
+
+    " Run the tests for the previously-marked file.
+    let in_spec_file = match(expand("%"), '_spec.rb$') != -1
+    if in_spec_file
+        call SetTestFile()
+    elseif !exists("t:grb_test_file")
+        return
+    end
+    call RunTests(t:grb_test_file . command_suffix)
+endfunction
+
+function! RunNearestTest()
+    let spec_line_number = line('.')
+    call RunTestFile(":" . spec_line_number)
+endfunction
+
+" % - go to matching element do..end
+runtime macros/matchit.vim
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Settings
-"
-" Enable the list of buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled=1
 
-" NERDTree show hidden files and bookmarks
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowBookmarks=1
-nmap <silent> <f2> :NERDTreeToggle<cr>
 
-" Default fzf layout
-" - down / up / left / right
-" - window (nvim only)
 let g:fzf_layout = { 'down': '~40%' }
-
-" [Files] Extra options for fzf
-"         e.g. File preview using CodeRay (http://coderay.rubychan.de/)
 let g:fzf_files_options =
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
-
-" [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
-
-" [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-
-" [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -R'
 
-
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 syntax sync fromstart
 colorscheme Monokai
@@ -102,19 +135,6 @@ if has("autocmd")
   autocmd BufWritePre *.rb,*.js :call <SID>StripTrailingWhitespaces()
 endif
 
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
 set autoindent  " copy indentation from current line when starting new line
 set ignorecase  " ignore case in pattern
 set smartcase   " ignore case if only lower case letters in pattern
@@ -124,8 +144,6 @@ set hlsearch    " highlight previous search
 set hidden  " allows buffers to be switched without saving
 
 hi Search ctermbg=Yellow ctermfg=Black
-
-
 
 set laststatus=2    " always show statusline
 set ruler           " always show cursor position
@@ -143,19 +161,10 @@ set splitright
 set history=50
 set ttyfast
 
-
-
-
-
-
-
-" TECHNICAL
 set mouse=a
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
-
-
 
 set undofile                  " save undo's after file closes
 set undodir=$HOME/.vim/undo   " where to save undo histories
@@ -176,30 +185,22 @@ set cursorline
 "set winheight=15
 "set winminheight=5
 
-
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-d> :Files<CR>
 map <C-b> :Buffers<CR>
 map <C-f> :Ag<CR>
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
-
-" % - go to matching element do..end
-runtime macros/matchit.vim
 
 " Move between windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+map <leader>t :call RunTestFile()<cr>
+map <leader>s :call RunNearestTest()<cr>
+map <leader>a :call RunTests('spec')<cr>
 
 " Shortcuts for rails projects
 map <leader>gv :Files app/views<cr>
@@ -210,43 +211,7 @@ map <leader>gl :Files lib<cr>
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
-function! RunTests(filename)
-    " Write the file and run tests for the given filename
-    :w
-    :silent !echo;echo;echo;echo;echo
-    exec ":!bundle exec rspec " . a:filename
-endfunction
+nmap <silent> <f2> :NERDTreeToggle<cr>
 
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " Run the tests for the previously-marked file.
-    let in_spec_file = match(expand("%"), '_spec.rb$') != -1
-    if in_spec_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number)
-endfunction
-
-" Run this file
-map <leader>t :call RunTestFile()<cr>
-" Run only the example under the cursor
-map <leader>T :call RunNearestTest()<cr>
-" Run all test files
-map <leader>a :call RunTests('spec')<cr>
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><cr>
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
