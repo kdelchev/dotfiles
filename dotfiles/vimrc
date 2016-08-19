@@ -223,3 +223,4 @@ nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
 "   If used now it gives side efects. When using the arrow keys in normal mode
 "   it enters edit mode and write upcase letter.
 "nnoremap <esc> :noh<return><esc>
+nnoremap ; :
