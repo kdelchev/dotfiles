@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'svermeulen/vim-easyclip'
   Plug 'tpope/vim-endwise'
+  Plug 'gabrielelana/vim-markdown'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -133,6 +134,9 @@ if has("autocmd")
   " autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
 
   autocmd BufWritePre *.rb,*.js :call <SID>StripTrailingWhitespaces()
+
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+  let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 endif
 
 set autoindent  " copy indentation from current line when starting new line
@@ -215,3 +219,7 @@ nmap <silent> <f2> :NERDTreeToggle<cr>
 
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><cr>
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
+" TODO: make this map working
+"   If used now it gives side efects. When using the arrow keys in normal mode
+"   it enters edit mode and write upcase letter.
+"nnoremap <esc> :noh<return><esc>
