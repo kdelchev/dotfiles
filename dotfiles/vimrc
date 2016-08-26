@@ -1,6 +1,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Some configurations are stealed from:
+" https://github.com/jbe/.vim/blob/master/vimrc
+" https://github.com/junegunn/dotfiles/blob/master/vimrc
 " https://github.com/Eunix/dotfiles/blob/master/.vimrc
 " https://github.com/keithpitt/dotfiles/blob/master/dots/vimrc
 " https://github.com/PhilRunninger/my_vim_setup/blob/master/vimrc
