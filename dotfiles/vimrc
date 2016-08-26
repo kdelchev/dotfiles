@@ -122,7 +122,12 @@ set shiftround    " round indent to multiple of shiftwidth
 if has("autocmd")
   " :set filetype? /. ft?
   " :set filetype=xml
-  filetype on
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
@@ -140,12 +145,11 @@ if has("autocmd")
 endif
 
 set autoindent  " copy indentation from current line when starting new line
-set ignorecase  " ignore case in pattern
+set ignorecase smartcase " makes search case sensitive only if capitalized character
 set smartcase   " ignore case if only lower case letters in pattern
 set incsearch   " show pattern as you type
 set hlsearch    " highlight previous search
-
-set hidden  " allows buffers to be switched without saving
+set hidden      " allows buffers to be switched without saving
 
 hi Search ctermbg=Yellow ctermfg=Black
 
@@ -162,7 +166,7 @@ set showmatch                   " show matching brackets when hovering
 set viminfo='25,\"50,n~/.vim/.viminfo
 set splitright
 
-set history=50
+set history=1000
 set ttyfast
 
 set mouse=a
@@ -177,11 +181,25 @@ set undoreload=10000          " number of lines to save for undo
 set clipboard=unnamed         " used by easyclip to specify which clipboard to use
 set textwidth=80
 set colorcolumn=+1
-set cursorline
+set cursorline                " highlight current line
+set showtabline=2             " Always show tab bar at the top
 
+
+set shell=zsh
+
+" keep more context when scrolling off the end of a buffer
+set scrolloff=3
 
 "setlocal foldmethod=indent
 
+" Turn folding off for real, hopefully
+set foldmethod=manual
+set nofoldenable
+
+" Use the old vim regex engine (version 1, as opposed to version 2, which was
+" introduced in Vim 7.3.969). The Ruby syntax highlighting is significantly
+" slower with the new regex engine.
+set re=1
 
 " This should make vertical split resize depending on focus
 "set winwidth=85
