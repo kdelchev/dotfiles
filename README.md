@@ -17,14 +17,3 @@ TODO: move requirements into rake task
 ## Usage
     git difftool [sha]
     git mergetool
-
-## Notes
-* tab to spaces
-    :set expandtab
-    :retab!
-
-* spaces to tabs
-    :set noexpandtab
-    :retab!
-
-`:help text-objects`
