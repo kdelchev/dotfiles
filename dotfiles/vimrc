@@ -106,14 +106,18 @@ let g:fzf_tags_command = 'ctags -R'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 syntax sync fromstart
-"colorscheme busierbee
+colorscheme busierbee
 "colorscheme busybee
 "colorscheme herald
 "colorscheme ingretu
 "colorscheme inkpot
-"colorscheme ir_black
-colorscheme jellyx
-" https://github.com/flazz/vim-colorschemes/tree/prep
+"colorscheme jellyx
+"colorscheme lucius
+"colorscheme obsidian
+"colorscheme shobogenzo
+"colorscheme synic
+"colorscheme xoria256
+"colorscheme zenburn
 
 set nobackup      " no backup files
 set nowritebackup " no backup file while editing
