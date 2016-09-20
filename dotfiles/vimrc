@@ -342,9 +342,9 @@ command! OpenChangedFiles :call OpenChangedFiles()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-d> :Files<CR>
-map <C-b> :Buffers<CR>
-map <C-f> :Ag<CR>
+map <F6> :Files<CR>
+map <F4> :Buffers<CR>
+map <F3> :Ag<CR>
 
 " Move between windows
 map <C-h> <C-w>h
