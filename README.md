@@ -2,14 +2,17 @@
 
 ## Install
 
-    # to symlink all config files
-    rake
-
-    # to install vim-plug
+    # install vim-plug
     rake plug
+
+    # symlink all config files
+    sudo rake
 
     # install oh-my-zsh
     rake ohmyzsh
+
+    # install rbenv
+    rake rbenv
 
 ## Requirements
 

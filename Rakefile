@@ -34,4 +34,12 @@ task :ohmyzsh do
   system 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 end
 
+task :rbenv do
+  system 'git clone https://github.com/rbenv/rbenv.git ~/.rbenv'
+  system 'cd ~/.rbenv && src/configure && make -C src'
+  # TODO: check if the SHELL is bash or zsh and apply PATH for the specific
+  # profile
+  system 'echo \'export PATH="$HOME/.rbenv/bin:$PATH"\' >> ~/.profile'
+end
+
 task :default => [:dot_files, :bin_files]
