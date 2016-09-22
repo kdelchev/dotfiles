@@ -8,6 +8,9 @@
     # to install vim-plug
     rake plug
 
+    # install oh-my-zsh
+    rake ohmyzsh
+
 ## Requirements
 
 TODO: move requirements into rake task

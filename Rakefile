@@ -30,4 +30,8 @@ task :plug do
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 end
 
+task :ohmyzsh do
+  system 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+end
+
 task :default => [:dot_files, :bin_files]
