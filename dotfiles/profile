@@ -2,6 +2,7 @@ export PATH=~/bin:$PATH # https://gist.github.com/kdelchev/530ab8bf90ab5fe1f0758
 export PATH="/usr/local/sbin:$PATH"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$(which elixir):$PATH"
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 export EDITOR=vim
 export DISABLE_SPRING=1
