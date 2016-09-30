@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'svermeulen/vim-easyclip'
   Plug 'tpope/vim-endwise'
   Plug 'gabrielelana/vim-markdown'
+  Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -202,6 +203,7 @@ set laststatus=2    " always show statusline
 set ruler           " always show cursor position
 set showmode        " display curent mode
 set showcmd         " display incomplete commands
+set relativenumber  " show relative number (hybrid mode)
 set number          " show line numbers
 
 set wildmenu
