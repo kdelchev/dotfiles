@@ -8,11 +8,15 @@ export EDITOR=vim
 export DISABLE_SPRING=1
 export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 
-# Allow [ or ] whereever you want; https://github.com/thoughtbot/dotfiles/blob/master/zshrc#L43
-unsetopt nomatch
-
-# Do not share history between tabs
-unsetopt share_history
+unamestr=`uname`
+if [[ "$unamestr" == "Linux" ]]; then
+  # do linux specific stuff
+else
+  # Allow [ or ] whereever you want; https://github.com/thoughtbot/dotfiles/blob/master/zshrc#L43
+  unsetopt nomatch
+  # Do not share history between tabs
+  unsetopt share_history
+fi
 
 alias a='alias'
 
