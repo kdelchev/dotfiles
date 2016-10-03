@@ -19,6 +19,8 @@ else
 fi
 
 alias a='alias'
+# Non-tested configuration
+#alias tmux="TERM=screen-256color-bce tmux"
 
 [[ -r ~/.passwords ]] && . ~/.passwords
 
