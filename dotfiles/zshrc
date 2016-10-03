@@ -58,7 +58,9 @@ plugins=(git bundler rails tmux)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
+if [[ -a ~/.environment ]]; then
 source ~/.environment
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
