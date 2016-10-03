@@ -57,9 +57,13 @@ plugins=(git bundler rails tmux)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source ~/.profile
+
+if [[ -a ~/.profile ]]; then
+  source ~/.profile
+fi
+
 if [[ -a ~/.environment ]]; then
-source ~/.environment
+  source ~/.environment
 fi
 
 # You may need to manually set your language environment
