@@ -33,6 +33,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-endwise'
   Plug 'gabrielelana/vim-markdown'
   Plug 'jeffkreeftmeijer/vim-numbertoggle'
+  Plug 'elixir-lang/vim-elixir'
+  "Plug 'mattreduce/vim-mix'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
