@@ -352,10 +352,9 @@ command! OpenChangedFiles :call OpenChangedFiles()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F6> :Files<CR>
-map <F4> :Buffers<CR>
-map <F3> :Ag<CR>
-
+" :map j gg # maps j -> qq
+" :map Q j # maps Q -> j -> gg
+" :noremap W j # maps W -> j
 " Move between windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -375,14 +374,18 @@ map <leader>gl :Files lib<cr>
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
-nmap <silent> <f2> :NERDTreeToggle<cr>
 
-nnoremap <silent> <Leader>ag :Ag <C-R><C-W><cr>
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
 " TODO: make this map working
 "   If used now it gives side efects. When using the arrow keys in normal mode
 "   it enters edit mode and write upcase letter.
 "nnoremap <esc> :noh<return><esc>
+"nmap <esc> :noh<CR><esc>
+
+nnoremap <silent> <F2> :NERDTreeToggle<cr>
+map <F3> :Ag<CR>
+map <F4> :Buffers<CR>
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
+map <F6> :Files<CR>
 
 
 " HARD MODE: Disable the arrow and Pg Up/Down keys
