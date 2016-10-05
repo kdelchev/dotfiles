@@ -385,7 +385,7 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 nnoremap <silent> <F2> :NERDTreeToggle<cr>
 map <F3> :Ag<CR>
 map <F4> :Buffers<CR>
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
+"nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
 map <F6> :Files<CR>
 
 
