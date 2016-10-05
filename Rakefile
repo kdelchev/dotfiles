@@ -42,4 +42,10 @@ task :rbenv do
   system 'echo \'export PATH="$HOME/.rbenv/bin:$PATH"\' >> ~/.profile'
 end
 
+desc "Installs vim-get to add support for vim clipboard. Check if clipbard is
+installed: :echo has('clipboard'). 0 means clipboard is not supported"
+task :vimgtk do
+  system 'sudo apt-get instal vim-gtk'
+end
+
 task :default => [:dot_files, :bin_files]
