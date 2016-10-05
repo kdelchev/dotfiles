@@ -1,6 +1,7 @@
 dot_files = Dir['dotfiles/*']
 bin_files = Dir['bin/*']
 
+desc 'Symlink dot files'
 task :dot_files do
   p 'Symlinking dot files'
   dot_files.each do |file|
@@ -12,6 +13,7 @@ task :dot_files do
   end
 end
 
+desc 'Symlink binary files'
 task :bin_files do
   p 'Symlinking bin files'
   bin_files.each do |file|
@@ -25,15 +27,18 @@ task :bin_files do
   end
 end
 
+desc 'Install vim-plug'
 task :plug do
   system 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 end
 
+desc 'Install ohmyzsh'
 task :ohmyzsh do
   system 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 end
 
+desc 'Install rbenv'
 task :rbenv do
   system 'git clone https://github.com/rbenv/rbenv.git ~/.rbenv'
   system 'cd ~/.rbenv && src/configure && make -C src'
@@ -42,10 +47,7 @@ task :rbenv do
   system 'echo \'export PATH="$HOME/.rbenv/bin:$PATH"\' >> ~/.profile'
 end
 
-desc "Installs vim-get to add support for vim clipboard. Check if clipbard is
-installed: :echo has('clipboard'). 0 means clipboard is not supported"
+desc 'Install vim-gtk for vim clipboard support'
 task :vimgtk do
   system 'sudo apt-get instal vim-gtk'
 end
-
-task :default => [:dot_files, :bin_files]

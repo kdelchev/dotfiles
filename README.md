@@ -2,17 +2,8 @@
 
 ## Install
 
-    # install vim-plug
-    rake plug
-
-    # symlink all config files
-    sudo rake
-
-    # install oh-my-zsh
-    rake ohmyzsh
-
-    # install rbenv
-    rake rbenv
+    # list all tasks
+    rake -T
 
 ## Requirements
 
