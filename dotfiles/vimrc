@@ -102,7 +102,6 @@ let g:airline#extensions#tabline#enabled=1
 
 " nerdtree
 let g:NERDTreeShowHidden=1
-let g:NERDTreeShowBookmarks=1
 
 " fzf
 let g:fzf_layout = { 'down': '~40%' }
