@@ -6,7 +6,6 @@
 " https://github.com/Eunix/dotfiles/blob/master/.vimrc
 " https://github.com/keithpitt/dotfiles/blob/master/dots/vimrc
 " https://github.com/PhilRunninger/my_vim_setup/blob/master/vimrc
-" https://github.com/PhilRunninger/my_vim_setup/blob/master/vimrc
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
@@ -98,11 +97,14 @@ runtime macros/matchit.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline
 let g:airline#extensions#tabline#enabled=1
 
+" nerdtree
 let g:NERDTreeShowHidden=1
 let g:NERDTreeShowBookmarks=1
 
+" fzf
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_files_options =
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
