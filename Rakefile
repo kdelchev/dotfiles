@@ -50,4 +50,12 @@ end
 desc 'Install vim-gtk for vim clipboard support'
 task :vimgtk do
   system 'sudo apt-get instal vim-gtk'
+  # TODO: install used applications
+end
+
+desc 'Install homebrew and OSX applications'
+task :homebrew do
+  system 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  system 'brew install qt the_silver_searcher rabbitmq redis elasticsearch vim rbenv ruby-build openssl tig ctags'
+  system 'brew cask install caffeine google-chrome iterm2 pgadmin4 atom'
 end
