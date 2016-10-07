@@ -116,18 +116,18 @@ let g:fzf_tags_command = 'ctags -R'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 syntax sync fromstart
-colorscheme busierbee
+"colorscheme busierbee
 "colorscheme busybee
 "colorscheme herald
-"colorscheme ingretu
-"colorscheme inkpot
+"colorscheme ingretu " +++ in dark
+"colorscheme inkpot " ++ in dark
 "colorscheme jellyx
 "colorscheme lucius
-"colorscheme obsidian
+"colorscheme obsidian " comments not visible
 "colorscheme shobogenzo
-"colorscheme synic
+"colorscheme synic " +++ in dark
 "colorscheme xoria256
-"colorscheme zenburn
+colorscheme zenburn
 
 set nobackup      " no backup files
 set nowritebackup " no backup file while editing
