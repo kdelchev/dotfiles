@@ -186,7 +186,7 @@ if has("autocmd")
   " custom filetype syntax setting
   " autocmd BufNewFile,BufRead *.rss,*.atom setfiletype xml
 
-  autocmd BufWritePre *.rb,*.js :call <SID>StripTrailingWhitespaces()
+  "autocmd BufWritePre *.rb,*.js :call <SID>StripTrailingWhitespaces()
 
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
