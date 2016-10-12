@@ -35,7 +35,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'elixir-lang/vim-elixir'
   "Plug 'scrooloose/syntastic'
   "Plug 'mattreduce/vim-mix'
-  "Plug 'majutsushi/tagbar'
+  Plug 'majutsushi/tagbar'
   "Plug 'ctags.vim'
 call plug#end()
 
@@ -387,6 +387,7 @@ map <F3> :Ag<CR>
 map <F4> :Buffers<CR>
 "nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
 map <F6> :Files<CR>
+nmap <F7> :TagbarToggle<CR>
 
 
 " HARD MODE: Disable the arrow and Pg Up/Down keys
