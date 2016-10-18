@@ -33,7 +33,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'gabrielelana/vim-markdown'
   Plug 'jeffkreeftmeijer/vim-numbertoggle'
   Plug 'elixir-lang/vim-elixir'
-  "Plug 'scrooloose/syntastic'
+  Plug 'scrooloose/syntastic'
   "Plug 'mattreduce/vim-mix'
   Plug 'majutsushi/tagbar'
   "Plug 'ctags.vim'
@@ -97,19 +97,29 @@ runtime macros/matchit.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" airline
+" :help airline
 let g:airline#extensions#tabline#enabled=1
 
-" nerdtree
+" :help nerdtree
 let g:NERDTreeShowHidden=1
 
-" fzf
+" :help fzf
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_files_options =
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 let g:fzf_tags_command = 'ctags -R'
+
+" :help syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
@@ -166,6 +176,8 @@ if has("autocmd")
   autocmd FileType haml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType cucumber setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+  autocmd FileType elixir setlocal ts=2 sts=2 sw=2 expandtab
 
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
