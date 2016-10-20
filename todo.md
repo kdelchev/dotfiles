@@ -1,6 +1,7 @@
 * https://vimeo.com/user1690209/videos
 * http://lococast.net/
 * http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+* http://vimcasts.org/episodes/page/6/
 * add git-hook to update tags on checkout/pull/fetch
 * add rake task to install git-hook to current project
 

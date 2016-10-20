@@ -9,6 +9,7 @@
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 " https://github.com/rudionrails/dotfiles/tree/master/vim
 " https://github.com/RStankov/config_files/tree/master/dot/vim
+" https://gist.github.com/layflags/3814756#file-vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set encoding=utf-8 nobomb
