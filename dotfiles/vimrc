@@ -96,29 +96,6 @@ endfunction
 runtime macros/matchit.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" :help airline
-let g:airline#extensions#tabline#enabled=1
-
-" :help nerdtree
-let g:NERDTreeShowHidden=1
-
-" :help fzf
-let g:fzf_layout = { 'down': '~40%' }
-let g:fzf_files_options =
-  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
-let g:fzf_buffers_jump = 1
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-let g:fzf_tags_command = 'ctags -R'
-
-" :help syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax sync fromstart
@@ -400,7 +377,6 @@ nnoremap ; :
 nnoremap <leader>' :NERDTreeToggle<cr>
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
-nnoremap <leader>bd :bd<CR>
 map <F2> :Files<CR>
 map <F3> :Ag<CR>
 map <F4> :Buffers<CR>
