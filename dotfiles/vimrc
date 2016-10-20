@@ -356,6 +356,9 @@ command! OpenChangedFiles :call OpenChangedFiles()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " :map j gg # maps j -> qq
 " :map Q j # maps Q -> j -> gg
 " :noremap W j # maps W -> j
