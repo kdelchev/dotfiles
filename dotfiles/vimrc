@@ -7,6 +7,8 @@
 " https://github.com/keithpitt/dotfiles/blob/master/dots/vimrc
 " https://github.com/PhilRunninger/my_vim_setup/blob/master/vimrc
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+" https://github.com/rudionrails/dotfiles/tree/master/vim
+" https://github.com/RStankov/config_files/tree/master/dot/vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set encoding=utf-8 nobomb
@@ -34,10 +36,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'jeffkreeftmeijer/vim-numbertoggle'
   Plug 'elixir-lang/vim-elixir'
   Plug 'scrooloose/syntastic'
+  Plug 'fatih/vim-go'
   "Plug 'mattreduce/vim-mix'
   "Plug 'majutsushi/tagbar'
   "Plug 'ctags.vim'
-  Plug 'fatih/vim-go'
+  " Plug '/sjl/gundo.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
