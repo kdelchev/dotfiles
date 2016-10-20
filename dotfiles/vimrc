@@ -35,7 +35,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'elixir-lang/vim-elixir'
   Plug 'scrooloose/syntastic'
   "Plug 'mattreduce/vim-mix'
-  Plug 'majutsushi/tagbar'
+  "Plug 'majutsushi/tagbar'
   "Plug 'ctags.vim'
 call plug#end()
 

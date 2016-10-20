@@ -29,3 +29,4 @@ eval "$(rbenv init -)"
 
 #LDFLAGS:  -L/usr/local/opt/openssl/lib
 #CPPFLAGS: -I/usr/local/opt/openssl/include
+export GPGKEY=5BD3F192
