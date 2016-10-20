@@ -117,10 +117,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
@@ -401,7 +397,10 @@ nnoremap j gj
 nnoremap k gk
 " Spend hitting shift
 nnoremap ; :
-nnoremap <leader>q :NERDTreeToggle<cr>
+nnoremap <leader>' :NERDTreeToggle<cr>
+nnoremap <leader>[ :bp<CR>
+nnoremap <leader>] :bn<CR>
+nnoremap <leader>bd :bd<CR>
 map <F2> :Files<CR>
 map <F3> :Ag<CR>
 map <F4> :Buffers<CR>
