@@ -1,10 +1,33 @@
-dot_files = Dir['dotfiles/*']
-bin_files = Dir['bin/*']
+# Symlink config files
+desc 'Symlink all config files'
+task :default => [:vim, :dot]
 
-desc 'Symlink dotfiles'
-task :dotfiles do
+desc 'Symlink vim folder'
+task :vim do
+  p 'Symlinking vim home'
+  system "mkdir -p ~/.vim"
+  Dir['vim/*'].each do |path|
+    target = '~/.' + path
+    recursive_symlink(path, target)
+  end
+end
+
+def recursive_symlink(path, target)
+  if File.directory?(path)
+    system "mkdir -p #{target}"
+    Dir["#{path}/*"].each do |source|
+      recursive_symlink(source, target)
+    end
+  else
+    file = File.join(File.dirname(__FILE__), path)
+    system "ln -sf #{file} #{target}"
+  end
+end
+
+desc 'Symlink dot files'
+task :dot do
   p 'Symlinking dot files'
-  dot_files.each do |file|
+  Dir['dotfiles/*'].each do |file|
     path = File.join(File.dirname(__FILE__), file)
     name = File.basename(file)
     target = File.expand_path("~/.#{name}")
@@ -16,7 +39,7 @@ end
 desc 'Symlink binary files'
 task :binfiles do
   p 'Symlinking bin files'
-  bin_files.each do |file|
+  Dir['bin/*'].each do |file|
     path = File.join(File.dirname(__FILE__), file)
     name = File.basename(file)
     # NB: this could be system specific path
