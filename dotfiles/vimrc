@@ -385,7 +385,7 @@ map <F2> :Files<CR>
 map <F3> :Ag<CR>
 map <F4> :Buffers<CR>
 "nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
-nmap <F7> :TagbarToggle<CR>
+"nmap <F7> :TagbarToggle<CR>
 
 
 " HARD MODE: Disable the arrow and Pg Up/Down keys
