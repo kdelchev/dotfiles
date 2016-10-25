@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
   "Plug 'mattreduce/vim-mix'
   "Plug 'majutsushi/tagbar'
   "Plug 'ctags.vim'
+  "https://github.com/xolox/vim-easytags
   " Plug '/sjl/gundo.vim'
 call plug#end()
 
@@ -249,6 +250,7 @@ set re=1
 "set winminwidth=20
 "set winheight=15
 "set winminheight=5
+set complete-=t
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
@@ -381,6 +383,7 @@ nnoremap ; :
 nnoremap <leader>' :NERDTreeToggle<cr>
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
+nnoremap <leader>? :NERDTreeFind<CR>
 map <F2> :Files<CR>
 map <F3> :Ag<CR>
 map <F4> :Buffers<CR>
