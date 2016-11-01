@@ -379,7 +379,7 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 nnoremap j gj
 nnoremap k gk
 " Spend hitting shift
-nnoremap ; :
+"nnoremap ; :
 nnoremap <leader>' :NERDTreeToggle<cr>
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
