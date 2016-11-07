@@ -99,12 +99,11 @@ endfunction
 
 " % - go to matching element do..end
 runtime macros/matchit.vim
+"packadd! matchit " Another way to add matching package
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax sync fromstart
-
 set nobackup      " no backup files
 set nowritebackup " no backup file while editing
 set noswapfile    " no swap files
@@ -183,15 +182,15 @@ if &t_Co >= 256 || has("gui_running")
 endif
 
 if &t_Co > 2 || has("gui_running")
-  " switch syntax highlighting on, when the terminal has colors
-  syntax on
+  syntax sync fromstart " TODO: check this setting
+  syntax on    " switch syntax highlighting on, when the terminal has colors
+  set hlsearch " highlight previous search
 endif
 
 set autoindent  " copy indentation from current line when starting new line
 set ignorecase smartcase " makes search case sensitive only if capitalized character
 set smartcase   " ignore case if only lower case letters in pattern
 set incsearch   " show pattern as you type
-set hlsearch    " highlight previous search
 set hidden      " allows buffers to be switched without saving
 
 hi Search ctermbg=Yellow ctermfg=Black
@@ -210,7 +209,7 @@ set showmatch                   " show matching brackets when hovering
 set viminfo='25,\"50,n~/.vim/.viminfo
 set splitright
 
-set history=1000
+set history=100
 set ttyfast
 
 set mouse=a
@@ -251,6 +250,7 @@ set re=1
 "set winheight=15
 "set winminheight=5
 set complete-=t
+set matchtime=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
