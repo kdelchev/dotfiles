@@ -252,6 +252,34 @@ set re=1
 set complete-=t
 set matchtime=1
 
+" https://github.com/scrooloose/nerdtree
+" :help nerdtree
+let g:NERDTreeShowHidden=1
+
+" https://github.com/vim-airline/vim-airline
+" :help airline
+let g:airline#extensions#tabline#enabled=1
+
+" https://github.com/junegunn/fzf.vim
+" :help fzf
+let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_files_options =
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+let g:fzf_buffers_jump = 1
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let g:fzf_tags_command = 'ctags -R'
+
+" https://github.com/scrooloose/syntastic
+" Add all recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
