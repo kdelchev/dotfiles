@@ -188,8 +188,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 set autoindent  " copy indentation from current line when starting new line
-set ignorecase smartcase " makes search case sensitive only if capitalized character
-set smartcase   " ignore case if only lower case letters in pattern
+set ignorecase smartcase " ignore case if all caps are the same
 set incsearch   " show pattern as you type
 set hidden      " allows buffers to be switched without saving
 
