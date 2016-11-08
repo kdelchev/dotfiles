@@ -232,10 +232,8 @@ set shell=zsh
 " keep more context when scrolling off the end of a buffer
 set scrolloff=3
 
-"setlocal foldmethod=indent
-
 " Turn folding off for real, hopefully
-set foldmethod=manual
+set foldmethod=indent
 set nofoldenable
 
 " Use the old vim regex engine (version 1, as opposed to version 2, which was
@@ -250,7 +248,7 @@ set re=1
 "set winminheight=5
 set complete-=t
 set matchtime=1
-
+set timeoutlen=1000 ttimeoutlen=0
 " https://github.com/scrooloose/nerdtree
 " :help nerdtree
 let g:NERDTreeShowHidden=1
