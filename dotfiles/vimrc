@@ -233,7 +233,7 @@ set shell=zsh
 set scrolloff=3
 
 " Turn folding off for real, hopefully
-set foldmethod=indent
+set foldmethod=manual
 set nofoldenable
 
 " Use the old vim regex engine (version 1, as opposed to version 2, which was
