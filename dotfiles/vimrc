@@ -38,6 +38,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'elixir-lang/vim-elixir'
   Plug 'scrooloose/syntastic'
   Plug 'fatih/vim-go'
+  Plug 'danchoi/ruby_bashrockets.vim' " :Bashrockets :Hashrockets
   "Plug 'mattreduce/vim-mix'
   "Plug 'majutsushi/tagbar'
   "Plug 'ctags.vim'
