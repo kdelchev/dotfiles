@@ -1,0 +1,73 @@
+Text objects
+----
+
+aw - a word (includes surronding whitespace)
+iw - inner word (does not include surronding whitespace)
+
+as - a sentence
+is - inner sentence
+
+ap - a paragraph
+ip - inner paragraph
+
+{ - before the beggining of paragraph
+} - after the end of paragraph
+
+( - in the beggining of paragraph
+) - after the end of paragraph
+
+a) - a parenthesized block
+i) - inner parenthesized block
+* - works for () {} [] '' "" etc
+
+ab - a block ?!?
+ib - inner block ?!?
+
+aB - a block ?!?
+iB - inner block ?!?
+
+at - a tag block (for markup languages)
+it - inner tag block (for markup languages)
+
+a< - a single tag (for markup languages)
+i< - inner single tag (for markup languages)
+
+<div> this is div <div>
+<a> this is div <a>
+
+additional scripts
+----
+https://github.com/bkad/CamelCaseMotion
+https://github.com/vim-scripts/argtextobj.vim
+https://github.com/michaeljsmith/vim-indent-object
+https://github.com/nelstrom/vim-textobj-rubyblock
+
+
+
+
+
+a) == c% == ca)
+
+(defn sum [x y]
+(+ x y))
+(defn sum [x y]
+(+ x y))
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+puts 'Hello "wolro"'
+puts 'Hello "world"'
+def function () {
+println('other');
+}
+puts 'Hello "world"'
+
+Project.all(:conditions => { :published => true })
+Project.all(:conditions => { :published => true })
+Project.all(:conditions => { :published => true })
+Project.all(:conditions => { :published => true })
