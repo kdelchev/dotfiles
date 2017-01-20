@@ -1,22 +1,15 @@
 export PATH=~/bin:$PATH # https://gist.github.com/kdelchev/530ab8bf90ab5fe1f0758d3c2b7d4507
 export PATH="/usr/local/sbin:$PATH"
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+#export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$PATH:$(which elixir)"
-export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 export EDITOR=vim
 export DISABLE_SPRING=1
 export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 
-unamestr=`uname`
-if [[ "$unamestr" == "Linux" ]]; then
-  # do linux specific stuff
-else
-  # Allow [ or ] whereever you want; https://github.com/thoughtbot/dotfiles/blob/master/zshrc#L43
-  unsetopt nomatch
-  # Do not share history between tabs
-  unsetopt share_history
-fi
+# Allow [ or ] whereever you want; https://github.com/thoughtbot/dotfiles/blob/master/zshrc#L43
+unsetopt nomatch
+# Do not share history between tabs
+unsetopt share_history
 
 alias a='alias'
 
@@ -29,13 +22,10 @@ eval "$(rbenv init -)"
 
 #LDFLAGS:  -L/usr/local/opt/openssl/lib
 #CPPFLAGS: -I/usr/local/opt/openssl/include
-export GPGKEY=5BD3F192
-# kill -0 checks to see if the pid exists
-if test -f $HOME/.gpg-agent-info && kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
-    GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info | cut -c 16-`
-else
-# No, gpg-agent not available; start gpg-agent
-    eval `gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info`
+
+if (command -v ag &> /dev/null); then
+  ag-in-project () {
+    git --no-pager grep "$@"
+    ag "$@" `bundle show --paths`
+  }
 fi
-export GPG_TTY=`tty`
-export GPG_AGENT_INFO
