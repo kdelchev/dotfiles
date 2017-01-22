@@ -1,4 +1,4 @@
-export PATH=~/bin:$PATH # https://gist.github.com/kdelchev/530ab8bf90ab5fe1f0758d3c2b7d4507
+#export PATH=~/bin:$PATH # https://gist.github.com/kdelchev/530ab8bf90ab5fe1f0758d3c2b7d4507
 export PATH="/usr/local/sbin:$PATH"
 #export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -15,9 +15,7 @@ alias a='alias'
 
 [[ -r ~/.passwords ]] && . ~/.passwords
 
-# Load rbenv automatically by appending
-# the following to ~/.zshrc:
-
+# Load rbenv automatically by appending the following to ~/.zshrc:
 eval "$(rbenv init -)"
 
 #LDFLAGS:  -L/usr/local/opt/openssl/lib
