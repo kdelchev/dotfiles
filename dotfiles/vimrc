@@ -46,7 +46,9 @@ call plug#begin('~/.vim/plugged')
   " Plug '/sjl/gundo.vim'
   Plug 'slim-template/vim-slim'
   Plug 'editorconfig/editorconfig-vim'
-
+  Plug 'kchmck/vim-coffee-script'
+  Plug 'mxw/vim-jsx'
+  Plug 'mtscout6/vim-cjsx'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
