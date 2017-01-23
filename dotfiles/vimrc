@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kchmck/vim-coffee-script'
   Plug 'mxw/vim-jsx'
   Plug 'mtscout6/vim-cjsx'
+  Plug 'craigemery/vim-autotag'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -420,6 +421,15 @@ map <F3> :Ag<CR>
 map <F4> :Buffers<CR>
 "nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
 "nmap <F7> :TagbarToggle<CR>
+
+" vim-autotag mappings
+":tn  Move to next definition (:tnext)
+":tp  Move to previous definition (:tprevious)
+":ts  List all definitions (:tselect)
+"^]   Jump to definition
+"^t   Jump back from definition
+"^W } Preview definition
+"g]   See all definitions
 
 
 " HARD MODE: Disable the arrow and Pg Up/Down keys
