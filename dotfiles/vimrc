@@ -41,7 +41,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'danchoi/ruby_bashrockets.vim' " :Bashrockets :Hashrockets
   "Plug 'mattreduce/vim-mix'
   "Plug 'majutsushi/tagbar'
-  "Plug 'ctags.vim'
   "https://github.com/xolox/vim-easytags
   " Plug '/sjl/gundo.vim'
   Plug 'slim-template/vim-slim'
