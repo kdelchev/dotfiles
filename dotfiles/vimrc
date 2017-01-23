@@ -43,6 +43,7 @@ call plug#begin('~/.vim/plugged')
   "Plug 'majutsushi/tagbar'
   "https://github.com/xolox/vim-easytags
   " Plug '/sjl/gundo.vim'
+
   Plug 'slim-template/vim-slim'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'kchmck/vim-coffee-script'

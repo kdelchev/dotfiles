@@ -5,46 +5,25 @@
 * add git-hook to update tags on checkout/pull/fetch
 * add rake task to install git-hook to current project
 
-$ brew list                                                                                                                                                            [11:49:20]
-apple-gcc42		erlang			irssi			mongodb			python			ruby			tree
-autoconf		gdbm			jpeg			nmap			qt			ruby-build		vim
-awscli			gettext			libevent		openssl			qt5			siege			wrk
-codeclimate		glib			libffi			pcre			rabbitmq		sqlite			wxmac
-ctags			graphviz		libpng			perl			rbenv			the_silver_searcher	xz
-elasticsearch		heroku			libtiff			pkg-config		readline		tig
-elixir			htop			libyaml			pstree			redis			tmux
+$ brew list
 
-brew install zsh zsh-completions
-brew cask install qlcolorcode
-brew cask install qlstephen
-brew cask install qlmarkdown
-brew cask install quicklook-json
-brew cask install qlprettypatch
-brew cask install quicklook-csv
-brew cask install betterzipql
-brew cask install webpquicklook
-brew cask install suspicious-package
+autoconf		gettext			libevent		node			pstree			sqlite			wrk
+boost			ghostscript		libffi			openjpeg		puma-dev		tesseract		wxmac
+cairo			glib			libpng			openssl			python			the_silver_searcher	xz
+ctags			gobject-introspection	libtiff			pcre			rabbitmq		tig			zsh
+doxygen			graphviz		libtool			perl			rbenv			tmux			zsh-completions
+erlang			highlight		libyaml			phantomjs		readline		tnef
+fontconfig		htop			little-cms2		pixman			redis			tree
+freetype		imagemagick		lua			pkg-config		ruby			unrar
+gd			jpeg			mysql			poppler			ruby-build		vim
+gdbm			leptonica		nmap			postgresql94		siege			webp
 
-brew cask install airmail
-brew cask install alfred
-brew cask install android-file-transfer
-brew cask install asepsis
-brew cask install appcleaner
-brew cask install caffeine
-brew cask install cheatsheet
-brew cask install doubletwist
-brew cask install dropbox
-brew cask install google-chrome
-brew cask install google-drive
-brew cask install google-hangouts
-brew cask install flux
-brew cask install latexian
-brew cask install 1password
-brew cask install pdftk
-brew cask install spectacle
-brew cask install sublime-text
-brew cask install superduper
-brew cask install totalfinder
-brew cask install transmission
-brew cask install valentina-studio
-brew cask install vlc
+brew cask uninstall qlcolorcode
+brew cask uninstall qlstephen
+brew cask uninstall qlmarkdown
+brew cask uninstall quicklook-json
+brew cask uninstall qlprettypatch
+brew cask uninstall quicklook-csv
+brew cask uninstall betterzipql
+brew cask uninstall webpquicklook
+brew cask uninstall suspicious-package
