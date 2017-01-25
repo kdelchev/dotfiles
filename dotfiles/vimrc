@@ -237,7 +237,7 @@ set showtabline=2             " Always show tab bar at the top
 set shell=zsh
 
 " keep more context when scrolling off the end of a buffer
-set scrolloff=3
+"set scrolloff=3
 
 " Turn folding off for real, hopefully
 set foldmethod=manual
