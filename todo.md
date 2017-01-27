@@ -27,3 +27,5 @@ brew cask uninstall quicklook-csv
 brew cask uninstall betterzipql
 brew cask uninstall webpquicklook
 brew cask uninstall suspicious-package
+
+* add tmuxinator setup here

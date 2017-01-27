@@ -49,7 +49,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'kchmck/vim-coffee-script'
   Plug 'mxw/vim-jsx'
   Plug 'mtscout6/vim-cjsx'
-  Plug 'craigemery/vim-autotag'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
