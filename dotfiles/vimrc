@@ -49,6 +49,29 @@ call plug#begin('~/.vim/plugged')
   Plug 'kchmck/vim-coffee-script'
   Plug 'mxw/vim-jsx'
   Plug 'mtscout6/vim-cjsx'
+
+
+  " TODO: check all the plugins below
+
+  "Plug 'tpope/vim-fugitive'
+  "Plug 'tpope/vim-rails'
+  "Plug 'tpope/vim-haml'
+  "Plug 'tpope/vim-markdown'
+  "Plug 'tpope/vim-repeat'
+  "Plug 'tpope/vim-surround'
+  "Plug 'tomtom/tcomment_vim'
+  "Plug 'Townk/vim-autoclose'
+  "Plug 'tsaleh/vim-supertab'
+  "Plug 'gregsexton/gitv'
+  "Plug 'kana/vim-textobj-user'
+  "Plug 'nelstrom/vim-textobj-rubyblock'
+  "Plug 'nanotech/jellybeans.vim'
+  "Plug 'vim-ruby/vim-ruby'
+  "Plug 'tpope/vim-bundler'
+  "Plug 'kien/ctrlp.vim'
+  "Plug 'slim-template/vim-slim'
+  "Plug 'kchmck/vim-coffee-script'
+  "Plug 'tpope/vim-endwise'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
