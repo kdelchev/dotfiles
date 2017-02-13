@@ -3,7 +3,7 @@ export PATH="/usr/local/sbin:$PATH"
 #export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
 export EDITOR=vim
-export DISABLE_SPRING=1
+#export DISABLE_SPRING=1
 export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 
 # Allow [ or ] whereever you want; https://github.com/thoughtbot/dotfiles/blob/master/zshrc#L43
@@ -27,3 +27,10 @@ if (command -v ag &> /dev/null); then
     ag "$@" `bundle show --paths`
   }
 fi
+
+calc-stats() {
+  #" Set the spec file that tests will be run for.
+  find . -name '*.rb' | xargs wc -
+}
+
+a cag="clear && ag"
