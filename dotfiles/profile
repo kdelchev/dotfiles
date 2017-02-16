@@ -34,3 +34,6 @@ calc-stats() {
 }
 
 a cag="clear && ag"
+
+source ~/bin/tmuxinator.zsh
+source $ZSH/oh-my-zsh.sh
