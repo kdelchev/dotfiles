@@ -12,6 +12,10 @@ unsetopt nomatch
 unsetopt share_history
 
 alias a='alias'
+a stop_app='pkill -USR1 puma-dev'
+a restart_app='date && stop_app'
+a cag="clear && ag"
+a app="cd ~/webapps/application"
 
 [[ -r ~/.passwords ]] && . ~/.passwords
 
@@ -32,8 +36,6 @@ calc-stats() {
   #" Set the spec file that tests will be run for.
   find . -name '*.rb' | xargs wc -
 }
-
-a cag="clear && ag"
 
 source ~/bin/tmuxinator.zsh
 source $ZSH/oh-my-zsh.sh
