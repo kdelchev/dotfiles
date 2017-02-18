@@ -51,6 +51,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mtscout6/vim-cjsx'
 
 
+	Plug 'keith/tmux.vim'
+
   " TODO: check all the plugins below
 
   "Plug 'tpope/vim-fugitive'
