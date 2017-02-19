@@ -430,16 +430,16 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" TODO: resize splits with A-arrow keys
-" http://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim
-" alt-left ^[^[[D
-" left ^[[D
-
-
-
-map <leader>t :call RunTestFile()<cr>
-map <leader>s :call RunNearestTest()<cr>
-map <leader>a :call RunTests('spec')<cr>
+" Resize split with Alt-arrow keys
+" iTerm2 Profile->key bindings, load xterm preset
+" alt-left ^[^[[A - Up
+" alt-left ^[^[[B - Down
+" alt-left ^[^[[C - Right
+" alt-left ^[^[[D - Left
+map <Esc>[1;9A <C-w>+
+map <Esc>[1;9B <C-w>-
+map <Esc>[1;9C <C-w>>
+map <Esc>[1;9D <C-w><
 
 " Shortcuts for rails projects
 map <leader>gv :Files app/views<cr>
@@ -449,6 +449,14 @@ map <leader>gh :Files app/helpers<cr>
 map <leader>gl :Files lib<cr>
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
+
+
+
+
+" TODO
+map <leader>t :call RunTestFile()<cr>
+map <leader>s :call RunNearestTest()<cr>
+map <leader>a :call RunTests('spec')<cr>
 
 " TODO: make this map working
 "   If used now it gives side efects. When using the arrow keys in normal mode
