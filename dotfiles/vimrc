@@ -397,20 +397,45 @@ command! OpenChangedFiles :call OpenChangedFiles()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
+" :map j gg    " maps j -> qq
+" :map Q j     " maps Q -> j -> gg
+" :noremap W j " maps W -> j
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F2> :Files<CR>
+map <F3> :Ag<CR>
+map <F4> :Buffers<CR>
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 " Clear search highlighting
 nmap <silent> <leader>, :nohlsearch<CR>
-" :map j gg # maps j -> qq
-" :map Q j # maps Q -> j -> gg
-" :noremap W j # maps W -> j
+
+nnoremap <leader>' :NERDTreeToggle<cr>
+nnoremap <leader>[ :bp<CR>
+nnoremap <leader>] :bn<CR>
+nnoremap <leader>? :NERDTreeFind<CR>
+
+" Move smoothly over wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" Spend hitting shift
+nnoremap ; :
+
 " Move between windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" TODO: resize splits with A-arrow keys
+" http://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim
+" alt-left ^[^[[D
+" left ^[[D
+
+
 
 map <leader>t :call RunTestFile()<cr>
 map <leader>s :call RunNearestTest()<cr>
@@ -431,18 +456,6 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 "nnoremap <esc> :noh<return><esc>
 "nmap <esc> :noh<CR><esc>
 
-" Move smoothly over wrapped lines
-nnoremap j gj
-nnoremap k gk
-" Spend hitting shift
-nnoremap ; :
-nnoremap <leader>' :NERDTreeToggle<cr>
-nnoremap <leader>[ :bp<CR>
-nnoremap <leader>] :bn<CR>
-nnoremap <leader>? :NERDTreeFind<CR>
-map <F2> :Files<CR>
-map <F3> :Ag<CR>
-map <F4> :Buffers<CR>
 "nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<cr>
 "nmap <F7> :TagbarToggle<CR>
 
@@ -457,23 +470,23 @@ map <F4> :Buffers<CR>
 
 
 " HARD MODE: Disable the arrow and Pg Up/Down keys
-nnoremap <Left> <Nop>
-nnoremap <Right> <Nop>
-nnoremap <Up> <Nop>
-nnoremap <Down> <Nop>
+nmap <Left> <Nop>
+nmap <Right> <Nop>
+nmap <Up> <Nop>
+nmap <Down> <Nop>
 
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
+imap <Left> <Nop>
+imap <Right> <Nop>
+imap <Up> <Nop>
+imap <Down> <Nop>
 
-vnoremap <Left> <Nop>
-vnoremap <Right> <Nop>
-vnoremap <Up> <Nop>
-vnoremap <Down> <Nop>
+vmap <Left> <Nop>
+vmap <Right> <Nop>
+vmap <Up> <Nop>
+vmap <Down> <Nop>
 
 " Disable entering Ex mode with Q
-map Q <Nop>
+"map Q <Nop>
 
 " Disable visual mode too
 map W <Nop>
