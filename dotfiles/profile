@@ -1,12 +1,12 @@
-#export PATH=~/bin:$PATH # https://gist.github.com/kdelchev/530ab8bf90ab5fe1f0758d3c2b7d4507
-export PATH="/usr/local/sbin:$PATH"
-#export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
 export EDITOR=vim
-#export DISABLE_SPRING=1
+
+[[ -d ~/bin ]] && export PATH=~/bin:$PATH
+[[ -d /usr/local/sbin ]] && export PATH="/usr/local/sbin:$PATH"
+[[ -d $HOME/.rbenv/bin ]] && export PATH="$HOME/.rbenv/bin:$PATH"
+
 export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 
-# Allow [ or ] whereever you want; https://github.com/thoughtbot/dotfiles/blob/master/zshrc#L43
+# Allow [ or ] whereever you want
 unsetopt nomatch
 # Do not share history between tabs
 unsetopt share_history
@@ -17,25 +17,10 @@ a restart_app='date && stop_app'
 a cag="clear && ag"
 a app="cd ~/webapps/application"
 
-[[ -r ~/.passwords ]] && . ~/.passwords
-
 # Load rbenv automatically by appending the following to ~/.zshrc:
 eval "$(rbenv init -)"
 
-#LDFLAGS:  -L/usr/local/opt/openssl/lib
-#CPPFLAGS: -I/usr/local/opt/openssl/include
-
-if (command -v ag &> /dev/null); then
-  ag-in-project () {
-    git --no-pager grep "$@"
-    ag "$@" `bundle show --paths`
-  }
-fi
-
-calc-stats() {
-  #" Set the spec file that tests will be run for.
-  find . -name '*.rb' | xargs wc -
-}
-
-source ~/bin/tmuxinator.zsh
-source $ZSH/oh-my-zsh.sh
+[[ -r ~/.passwords ]] && . ~/.passwords
+[[ -r ~/bin/tmuxinator.zsh ]] && source ~/bin/tmuxinator.zsh
+[[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
+[[ -r ~/.my-functions.sh ]] && source ~/.my-functions.sh
