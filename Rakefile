@@ -36,20 +36,6 @@ task :dot do
   end
 end
 
-desc 'Symlink binary files'
-task :binfiles do
-  p 'Symlinking bin files'
-  Dir['bin/*'].each do |file|
-    path = File.join(File.dirname(__FILE__), file)
-    name = File.basename(file)
-    # NB: this could be system specific path
-    target = File.expand_path("/usr/local/bin/#{name}")
-    # TODO: add confirmation before remove
-    system "rm #{target}" if File.exists?(target)
-    system "ln -s #{path} #{target}"
-  end
-end
-
 desc 'Install vim-plug'
 task :plug do
   system 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
