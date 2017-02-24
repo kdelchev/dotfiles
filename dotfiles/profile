@@ -16,6 +16,7 @@ a stop_app='pkill -USR1 puma-dev'
 a restart_app='date && stop_app'
 a cag="clear && ag"
 a app="cd ~/webapps/application"
+a nospring='spring stop && DISABLE_SPRING=1 &&'
 
 # Load rbenv automatically by appending the following to ~/.zshrc:
 eval "$(rbenv init -)"
