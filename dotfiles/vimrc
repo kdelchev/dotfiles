@@ -38,7 +38,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/syntastic'
   Plug 'slim-template/vim-slim'
   Plug 'svermeulen/vim-easyclip'
-  Plug 'terryma/vim-multiple-cursors'
+  "Plug 'terryma/vim-multiple-cursors' " C-n (toggle relative line numbers collision)
   Plug 'Townk/vim-autoclose'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-rails'
@@ -49,6 +49,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-ruby/vim-ruby'
   Plug 'vim-scripts/Gist.vim'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'vim-scripts/taglist.vim'
+
+  " ntpeters/vim-better-whitespace
+  " bronson/vim-trailing-whitespace
 
 
   " TODO: check all the plugins below
@@ -482,3 +486,11 @@ vmap <Down> <Nop>
 
 " Disable visual mode too
 map W <Nop>
+
+
+
+" puts the caller
+nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
+
+"p method(:render).source_location
+"p method(:render).super_method.source_location
