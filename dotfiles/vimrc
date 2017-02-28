@@ -275,6 +275,7 @@ let g:NERDTreeShowHidden=1
 " https://github.com/vim-airline/vim-airline
 " :help airline
 let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='badwolf'
 
 " https://github.com/junegunn/fzf.vim
 " :help fzf
