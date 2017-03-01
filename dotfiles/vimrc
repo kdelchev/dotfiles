@@ -245,7 +245,7 @@ let g:airline_powerline_fonts = 1
 
 " https://github.com/junegunn/fzf.vim
 " :help fzf
-let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = { 'down': '~100%' }
 let g:fzf_files_options =
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 let g:fzf_buffers_jump = 1
