@@ -17,6 +17,7 @@ a restart_app='date && stop_app'
 a cag="clear && ag"
 a app="cd ~/webapps/application"
 a nospring='spring stop && DISABLE_SPRING=1 &&'
+a dotfiles='cd ~/dotfiles'
 
 # Load rbenv automatically by appending the following to ~/.zshrc:
 eval "$(rbenv init -)"
