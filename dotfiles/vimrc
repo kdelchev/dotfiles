@@ -50,6 +50,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/Gist.vim'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'vim-scripts/taglist.vim'
+  Plug 'janko-m/vim-test'
+  " thoughtbot/vim-rspec " alternative for running tests
 
   " ntpeters/vim-better-whitespace
   " bronson/vim-trailing-whitespace
@@ -78,43 +80,6 @@ call plug#end()
 "    let @/=_s
 "    call cursor(l, c)
 "endfunction
-
-function! RunTests(filename)
-    " Write the file and run tests for the given filename
-    :w
-    :silent !clear
-    :silent !echo $(date)
-    " TODO: optionally run with bundle exec if Gemfile or .bundle dir found
-    "exec ":!bundle exec rspec " . a:filename
-    exec ":!rspec " . a:filename
-endfunction
-
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " Run the tests for the previously-marked file.
-    let in_spec_file = match(expand("%"), '_spec.rb$') != -1
-    if in_spec_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number)
-endfunction
 
 " % - go to matching element do..end
 runtime macros/matchit.vim
@@ -440,13 +405,12 @@ map <leader>gl :Files lib<cr>
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
-
-
-
-" TODO
-map <leader>t :call RunTestFile()<cr>
-map <leader>s :call RunNearestTest()<cr>
-map <leader>a :call RunTests('spec')<cr>
+" Test mappings
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 " TODO: make this map working
 "   If used now it gives side efects. When using the arrow keys in normal mode
