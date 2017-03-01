@@ -496,3 +496,14 @@ nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 
 "p method(:render).source_location
 "p method(:render).super_method.source_location
+
+" copy result to the system clipboard and echo the result
+" the > prompt means the clipboard
+" *f*ile *n*ame, ex. init.vim
+map <Leader>fn :let @+ = expand("%:t") \| echo '> ' . @+<CR>
+" *f*ile *p*ath, ex. /home/user/nvim/init.vim
+map <Leader>fp :let @+ = expand("%:p") \| echo '> ' . @+<CR>
+" *d*irectory *p*ath, ex. /home/user/nvim
+map <Leader>dp :let @+ = expand("%:p:h") \| echo '> ' . @+<CR>
+" *d*irectory *n*ame, ex. nvim
+map <Leader>dn :let @+ = expand("%:p:h:t") \| echo '> ' . @+<CR>
