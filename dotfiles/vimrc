@@ -507,3 +507,5 @@ map <Leader>fp :let @+ = expand("%:p") \| echo '> ' . @+<CR>
 map <Leader>dp :let @+ = expand("%:p:h") \| echo '> ' . @+<CR>
 " *d*irectory *n*ame, ex. nvim
 map <Leader>dn :let @+ = expand("%:p:h:t") \| echo '> ' . @+<CR>
+
+map <Leader>r :redraw!<cr>
