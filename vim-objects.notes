@@ -41,33 +41,3 @@ https://github.com/bkad/CamelCaseMotion
 https://github.com/vim-scripts/argtextobj.vim
 https://github.com/michaeljsmith/vim-indent-object
 https://github.com/nelstrom/vim-textobj-rubyblock
-
-
-
-
-
-a) == c% == ca)
-
-(defn sum [x y]
-(+ x y))
-(defn sum [x y]
-(+ x y))
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-puts 'Hello "wolro"'
-puts 'Hello "world"'
-def function () {
-println('other');
-}
-puts 'Hello "world"'
-
-Project.all(:conditions => { :published => true })
-Project.all(:conditions => { :published => true })
-Project.all(:conditions => { :published => true })
-Project.all(:conditions => { :published => true })
