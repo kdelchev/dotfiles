@@ -10,19 +10,17 @@ calc-stats() {
   find . -name '*.rb' | xargs wc -
 }
 
-# test functions
-find-pid() {
+# Find process(es) PID
+find-all() {
   ps aux | grep $1 | awk '{print $2}'
 }
 
-test() {
-  grep $1
-}
-
 kill-all() {
-  kill $1
+  find-all $1 | xargs kill --
 }
 
 kill9-all() {
-  kill -9 $1
+  find-all $1 | xargs kill -9 --
 }
+
+# find . -name *.slim | xargs git diff --
