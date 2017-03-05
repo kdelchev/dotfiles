@@ -1,14 +1,14 @@
 export EDITOR=vim
+export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
+#export BROWSER='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 [[ -d ~/bin ]] && export PATH=~/bin:$PATH
 [[ -d /usr/local/sbin ]] && export PATH="/usr/local/sbin:$PATH"
 [[ -d $HOME/.rbenv/bin ]] && export PATH="$HOME/.rbenv/bin:$PATH"
 
-export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
-
 # Allow [ or ] whereever you want
 unsetopt nomatch
-# Do not share history between tabs
+# Do not share history between iTerm tabs
 unsetopt share_history
 
 alias a='alias'
