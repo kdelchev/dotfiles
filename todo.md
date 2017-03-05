@@ -5,27 +5,11 @@
 * add git-hook to update tags on checkout/pull/fetch
 * add rake task to install git-hook to current project
 
+$ gem install bundler tmuxinator
+
 $ brew list
 
-autoconf		gettext			libevent		node			pstree			sqlite			wrk
-boost			ghostscript		libffi			openjpeg		puma-dev		tesseract		wxmac
-cairo			glib			libpng			openssl			python			the_silver_searcher	xz
-ctags			gobject-introspection	libtiff			pcre			rabbitmq		tig			zsh
-doxygen			graphviz		libtool			perl			rbenv			tmux			zsh-completions
-erlang			highlight		libyaml			phantomjs		readline		tnef
-fontconfig		htop			little-cms2		pixman			redis			tree
-freetype		imagemagick		lua			pkg-config		ruby			unrar
-gd			jpeg			mysql			poppler			ruby-build		vim
-gdbm			leptonica		nmap			postgresql94		siege			webp
+autoconf gettext libevent node pstree sqlite wrk boost hostscript libffi openjpeg puma-dev tesseract wxmac cairo lib libpng openssl python the_silver_searcher xz ctags object-introspection libtiff pcre rabbitmq tig zsh doxygen raphviz libtool perl rbenv tmux zsh-completions erlang highlight libyaml phantomjs readline tnef fontconfig htop little-cms2 pixman redis tree freetype imagemagick lua pkg-config ruby unrar gd jpeg mysql poppler ruby-build vim gdbm leptonica nmap postgresql94 siege webp asciidoc icu4c zeromq docbook ghostscript ucl docbook-xsl git upx glib gnu-getopt postgresql gobject-introspection xmlto
 
-brew cask uninstall qlcolorcode
-brew cask uninstall qlstephen
-brew cask uninstall qlmarkdown
-brew cask uninstall quicklook-json
-brew cask uninstall qlprettypatch
-brew cask uninstall quicklook-csv
-brew cask uninstall betterzipql
-brew cask uninstall webpquicklook
-brew cask uninstall suspicious-package
 
-* add tmuxinator setup here
+$ brew cask uninstall qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webpquicklook suspicious-package

@@ -1,3 +1,15 @@
+def recursive_symlink(path, target)
+  if File.directory?(path)
+    system "mkdir -p #{target}"
+    Dir["#{path}/*"].each do |source|
+      recursive_symlink(source, target)
+    end
+  else
+    file = File.join(File.dirname(__FILE__), path)
+    system "ln -sf #{file} #{target}"
+  end
+end
+
 # Symlink config files
 desc 'Symlink all config files'
 task :default => [:vim, :dot]
@@ -9,18 +21,6 @@ task :vim do
   Dir['vim/*'].each do |path|
     target = '~/.' + path
     recursive_symlink(path, target)
-  end
-end
-
-def recursive_symlink(path, target)
-  if File.directory?(path)
-    system "mkdir -p #{target}"
-    Dir["#{path}/*"].each do |source|
-      recursive_symlink(source, target)
-    end
-  else
-    file = File.join(File.dirname(__FILE__), path)
-    system "ln -sf #{file} #{target}"
   end
 end
 
@@ -36,24 +36,37 @@ task :dot do
   end
 end
 
-desc 'Install vim-plug'
-task :plug do
-  system 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+
+desc 'Inital setup'
+task :initial_setup do
+  [:homebrew, :ohmyzsh].each do |t|
+    Rake::Task[t].invoke(t)
+  end
+end
+
+desc 'Install homebrew'
+task :homebrew do
+  # TOOD: choose packages
+  #gettext
+  #libevent node  sqlite wrk boost hostscript libffi openjpeg tesseract wxmac cairo lib libpng openssl python object-introspection libtiff pcre rabbitmq doxygen raphviz libtool perl tmux zsh-completions erlang highlight libyaml phantomjs readline tnef fontconfig htop little-cms2 pixman redis tree freetype imagemagick lua pkg-config unrar gd jpeg mysql poppler gdbm leptonica nmap postgresql94 siege webp asciidoc icu4c zeromq docbook ghostscript ucl docbook-xsl git upx glib gnu-getopt postgresql gobject-introspection xmlto zsh
+  system 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  system 'brew install rbenv pstree qt the_silver_searcher rabbitmq redis elasticsearch vim tig ctags puma-dev xz tmux'
+  system 'brew cask install caffeine google-chrome iterm2 pgadmin4 atom'
 end
 
 desc 'Install ohmyzsh'
 task :ohmyzsh do
-  system 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+  system 'sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 end
 
-desc 'Install rbenv'
-task :rbenv do
-  system 'git clone https://github.com/rbenv/rbenv.git ~/.rbenv'
-  system 'cd ~/.rbenv && src/configure && make -C src'
-  # TODO: check if the SHELL is bash or zsh and apply PATH for the specific
-  # profile
-  system 'echo \'export PATH="$HOME/.rbenv/bin:$PATH"\' >> ~/.profile'
+
+
+
+desc 'Install vim-plug'
+task :plug do
+  system 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 end
 
 desc 'Install vim-gtk for vim clipboard support'
@@ -62,9 +75,4 @@ task :vimgtk do
   # TODO: install used applications
 end
 
-desc 'Install homebrew and OSX applications'
-task :homebrew do
-  system 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-  system 'brew install qt the_silver_searcher rabbitmq redis elasticsearch vim rbenv ruby-build openssl tig ctags'
-  system 'brew cask install caffeine google-chrome iterm2 pgadmin4 atom'
-end
+
