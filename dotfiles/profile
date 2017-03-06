@@ -12,8 +12,7 @@ unsetopt nomatch
 unsetopt share_history
 
 alias a='alias'
-a stop_app='pkill -USR1 puma-dev'
-a restart_app='date && stop_app'
+a kill-puma-dev='date && pkill -USR1 puma-dev'
 a cag="clear && ag"
 a app="cd ~/webapps/application"
 a nospring='spring stop && DISABLE_SPRING=1 &&'
