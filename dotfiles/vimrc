@@ -39,7 +39,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
   Plug 'svermeulen/vim-easyclip'
   "Plug 'terryma/vim-multiple-cursors' " C-n (toggle relative line numbers collision)
-  Plug 'Townk/vim-autoclose'
+  "Plug 'Townk/vim-autoclose' " auto type closing glyphs
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
@@ -51,6 +51,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'vim-scripts/taglist.vim'
   Plug 'janko-m/vim-test'
+  "Plug 'bling/vim-bufferline'
   " thoughtbot/vim-rspec " alternative for running tests
 
   " ntpeters/vim-better-whitespace
@@ -239,18 +240,47 @@ let g:NERDTreeShowHidden=1
 
 " https://github.com/vim-airline/vim-airline
 " :help airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='badwolf'
+"let g:airline_theme='badwolf'
+"let g:airline_theme='base16_ashes'
+"let g:airline_theme='base16_colors' " good
+let g:airline_theme='cool' "good, no read maybe?
+"let g:airline_theme='powerlineish' " good not so cool
+"let g:airline_theme='raven' " except non active buffer
+"let g:airline_theme='sierra' " almost good
+"let g:airline_theme='wombat' " except non active buffer
+
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled=1
+"let g:airline#extensions#tabline#show_buffers=1
+"let g:airline#extensions#tabline#show_tabs=1
+"let g:airline#extensions#tabline#show_splits=1
+let g:airline#extensions#bufferline#enabled = 1
+
+"let g:airline_detect_modified=1
+"let g:airline_theme='dark'
 
 " https://github.com/junegunn/fzf.vim
 " :help fzf
-let g:fzf_layout = { 'down': '~100%' }
+let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_files_options =
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 let g:fzf_tags_command = 'ctags -R'
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " https://github.com/scrooloose/syntastic
 " Add all recommended settings
@@ -356,9 +386,9 @@ command! OpenChangedFiles :call OpenChangedFiles()
 " :map Q j     " maps Q -> j -> gg
 " :noremap W j " maps W -> j
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F2> :Files<CR>
-map <F3> :Ag<CR>
-map <F4> :Buffers<CR>
+map <F2> :Files!<CR>
+map <F3> :Ag!<CR>
+map <F4> :Buffers!<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -473,3 +503,10 @@ map <Leader>dp :let @+ = expand("%:p:h") \| echo '> ' . @+<CR>
 map <Leader>dn :let @+ = expand("%:p:h:t") \| echo '> ' . @+<CR>
 
 map <Leader>r :redraw!<cr>
+
+"highlight Cursor guifg=white guibg=black
+"highlight iCursor guifg=white guibg=steelblue
+"set guicursor=n-v-c:block-Cursor
+"set guicursor+=i:ver100-iCursor
+"set guicursor+=n-v-c:blinkon0
+"set guicursor+=i:blinkwait10
