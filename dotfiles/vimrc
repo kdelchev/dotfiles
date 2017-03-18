@@ -210,12 +210,7 @@ set textwidth=120
 set colorcolumn=+1
 set cursorline                " highlight current line
 set showtabline=2             " Always show tab bar at the top
-
-
 set shell=zsh
-
-" keep more context when scrolling off the end of a buffer
-"set scrolloff=3
 
 " Turn folding off for real, hopefully
 set foldmethod=manual
@@ -234,6 +229,7 @@ set re=1
 set complete-=t
 set matchtime=1
 set timeoutlen=1000 ttimeoutlen=0
+
 " https://github.com/scrooloose/nerdtree
 " :help nerdtree
 let g:NERDTreeShowHidden=1
@@ -260,8 +256,6 @@ let g:airline#extensions#bufferline#enabled = 1
 "let g:airline_theme='dark'
 
 " https://github.com/junegunn/fzf.vim
-" :help fzf
-"
 " Default fzf layout
 " - down / up / left / right
 let g:fzf_layout = { 'down': '~40%' }
