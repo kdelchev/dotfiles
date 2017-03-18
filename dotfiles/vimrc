@@ -261,11 +261,16 @@ let g:airline#extensions#bufferline#enabled = 1
 
 " https://github.com/junegunn/fzf.vim
 " :help fzf
+"
+" Default fzf layout
+" - down / up / left / right
 let g:fzf_layout = { 'down': '~40%' }
-let g:fzf_files_options =
-  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+let g:fzf_files_options = '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+" [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
+" [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -R'
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
