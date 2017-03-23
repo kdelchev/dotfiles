@@ -35,7 +35,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mtscout6/vim-cjsx'
   Plug 'mxw/vim-jsx'
   Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/syntastic'
+  "Plug 'scrooloose/syntastic'
   Plug 'slim-template/vim-slim'
   Plug 'svermeulen/vim-easyclip'
   "Plug 'terryma/vim-multiple-cursors' " C-n (toggle relative line numbers collision)
@@ -283,9 +283,9 @@ let g:fzf_colors =
 
 " https://github.com/scrooloose/syntastic
 " Add all recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -509,3 +509,6 @@ map <Leader>r :redraw!<cr>
 "set guicursor+=i:ver100-iCursor
 "set guicursor+=n-v-c:blinkon0
 "set guicursor+=i:blinkwait10
+
+"set grepprg=ag\ --nogroup\ --nocolor
+"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
