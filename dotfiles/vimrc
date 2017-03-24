@@ -172,6 +172,19 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch " highlight previous search
 endif
 
+if executable('ag')
+  "let g:ackprg = 'ag --vimgrep'
+
+  "let g:ackprg = 'ag --vimgrep --smart-case'
+  "cnoreabbrev ag Ack
+  "cnoreabbrev aG Ack
+  "cnoreabbrev Ag Ack
+  "cnoreabbrev AG Ack
+
+  set grepprg=ag\ --nogroup\ --nocolor
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+endif
+
 set autoindent  " copy indentation from current line when starting new line
 set ignorecase smartcase " ignore case if all caps are the same
 set incsearch   " show pattern as you type
@@ -509,6 +522,3 @@ map <Leader>r :redraw!<cr>
 "set guicursor+=i:ver100-iCursor
 "set guicursor+=n-v-c:blinkon0
 "set guicursor+=i:blinkwait10
-
-"set grepprg=ag\ --nogroup\ --nocolor
-"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
