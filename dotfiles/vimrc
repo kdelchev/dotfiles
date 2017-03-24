@@ -522,3 +522,7 @@ map <Leader>r :redraw!<cr>
 "set guicursor+=i:ver100-iCursor
 "set guicursor+=n-v-c:blinkon0
 "set guicursor+=i:blinkwait10
+
+" Center on current line when searching
+nmap n nzz
+nmap N Nzz
