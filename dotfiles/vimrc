@@ -526,3 +526,5 @@ map <Leader>r :redraw!<cr>
 " Center on current line when searching
 nmap n nzz
 nmap N Nzz
+nmap <C-o> <C-o>zz
+nmap <C-i> <C-i>zz
