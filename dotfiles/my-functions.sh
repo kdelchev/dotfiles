@@ -23,4 +23,7 @@ kill9-all() {
   find-all $1 | xargs kill -9 --
 }
 
+puma-log() {
+  tail -f /Users/kdelchev/Library/Logs/puma-dev.log
+}
 # find . -name *.slim | xargs git diff --
