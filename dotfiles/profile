@@ -15,8 +15,10 @@ alias a='alias'
 a kill-puma-dev='date && pkill -USR1 puma-dev'
 a cag="clear && ag"
 a app="cd ~/webapps/application"
+a monolith="cd ~/webapps/monolith"
 a nospring='spring stop && DISABLE_SPRING=1 &&'
 a dotfiles='cd ~/dotfiles'
+a cpbm='cd ~/workspace/cpbm'
 
 # Load rbenv automatically by appending the following to ~/.zshrc:
 eval "$(rbenv init -)"
