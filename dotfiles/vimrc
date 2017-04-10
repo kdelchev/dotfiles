@@ -529,5 +529,6 @@ nmap n nzz
 nmap N Nzz
 nmap <C-o> <C-o>zz
 nmap <C-i> <C-i>zz
+nmap gg ggzz
 
 nmap <leader>tig :!tig %<CR>
