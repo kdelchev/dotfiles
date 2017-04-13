@@ -535,3 +535,4 @@ nmap <C-i> <C-i>zz
 nmap gg ggzz
 
 nmap <leader>tig :!tig %<CR>
+nmap <leader>x :bd<CR>
