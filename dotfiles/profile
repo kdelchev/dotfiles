@@ -6,11 +6,6 @@ export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 [[ -d /usr/local/sbin ]] && export PATH="/usr/local/sbin:$PATH"
 [[ -d $HOME/.rbenv/bin ]] && export PATH="$HOME/.rbenv/bin:$PATH"
 
-# Allow [ or ] whereever you want
-unsetopt nomatch
-# Do not share history between iTerm tabs
-unsetopt share_history
-
 alias a='alias'
 a kill-puma-dev='date && pkill -USR1 puma-dev'
 a cag="clear && ag"
@@ -27,3 +22,4 @@ eval "$(rbenv init -)"
 [[ -r ~/bin/tmuxinator.zsh ]] && source ~/bin/tmuxinator.zsh
 [[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 [[ -r ~/.my-functions.sh ]] && source ~/.my-functions.sh
+[[ -r ~/.zsh_profile ]] && source ~/.zsh_profile
