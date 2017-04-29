@@ -51,6 +51,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'vim-scripts/taglist.vim'
   Plug 'janko-m/vim-test'
+  Plug 'christoomey/vim-tmux-navigator'
   "Plug 'bling/vim-bufferline'
   " thoughtbot/vim-rspec " alternative for running tests
 
