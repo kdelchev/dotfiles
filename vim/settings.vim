@@ -62,17 +62,7 @@ if has("autocmd")
 endif
 
 if &t_Co >= 256 || has("gui_running")
-  "colorscheme zenburn
-  colorscheme kolode
-  "colorscheme busierbee
-  "colorscheme busybee
-  "colorscheme herald     " +++ readability, in dark
-  "colorscheme ingretu    " +++ in dark
-  "colorscheme inkpot     " ++ in dark
-  "colorscheme shobogenzo " ++ in dark
-  "colorscheme synic      " +++ in dark
-  "colorscheme xoria256
-  let g:zenburn_high_Contrast=1
+  colorscheme zenburn
 endif
 
 if &t_Co > 2 || has("gui_running")
