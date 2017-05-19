@@ -101,11 +101,12 @@ vmap <Down> <Nop>
 " Disable visual mode too
 map W <Nop>
 
-
-
 " puts the caller
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 nnoremap <leader>who oputs "-" * 60 + " #{} " + "-" * 60<esc>
+
+" in-vim serch results
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "p method(:render).source_location
 "p method(:render).super_method.source_location
@@ -117,7 +118,7 @@ map <Leader>fn :let @+ = expand("%:t") \| echo '> ' . @+<CR>
 " *f*ile *p*ath, ex. /home/user/nvim/init.vim
 map <Leader>fp :let @+ = expand("%:p") \| echo '> ' . @+<CR>
 " copy file relative path with extensnion
-map <Leader>yy :let @+ = expand("%:r:h") \| echo '> ' . @+<CR>
+map <Leader>yy :let @+ = expand("%:r") . '.' . expand("%:e") \| echo '> ' . @+<CR>
 
 map <Leader>r :redraw!<cr>
 

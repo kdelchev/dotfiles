@@ -81,7 +81,6 @@ if executable('ag')
   "cnoreabbrev AG Ack
 
   set grepprg=ag\ --nogroup\ --nocolor
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 
 set autoindent  " copy indentation from current line when starting new line
