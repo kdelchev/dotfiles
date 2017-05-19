@@ -13,7 +13,7 @@ a app="cd ~/webapps/application"
 a monolith="cd ~/webapps/monolith"
 a nospring='spring stop && DISABLE_SPRING=1 &&'
 a dotfiles='cd ~/dotfiles'
-a entrance='cd ~/workspace/entrance'
+a ent='cd ~/workspace/entrance'
 a db='bin/rails db -p'
 
 # Load rbenv automatically by appending the following to ~/.zshrc:
