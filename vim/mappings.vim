@@ -118,10 +118,6 @@ map <Leader>fn :let @+ = expand("%:t") \| echo '> ' . @+<CR>
 map <Leader>fp :let @+ = expand("%:p") \| echo '> ' . @+<CR>
 " copy file relative path with extensnion
 map <Leader>yy :let @+ = expand("%:r:h") \| echo '> ' . @+<CR>
-" *d*irectory *p*ath, ex. /home/user/nvim
-map <Leader>dp :let @+ = expand("%:p:h") \| echo '> ' . @+<CR>
-" *d*irectory *n*ame, ex. nvim
-map <Leader>dn :let @+ = expand("%:p:h:t") \| echo '> ' . @+<CR>
 
 map <Leader>r :redraw!<cr>
 
