@@ -39,10 +39,10 @@ map <C-l> <C-w>l
 " alt-left ^[^[[B - Down
 " alt-left ^[^[[C - Right
 " alt-left ^[^[[D - Left
-map <Esc>[1;9A <C-w>+
-map <Esc>[1;9B <C-w>-
-map <Esc>[1;9C <C-w>>
-map <Esc>[1;9D <C-w><
+"map <Esc>[3;9A <C-w>+
+"map <Esc>[1;9B <C-w>-
+"map <Esc>[1;9C <C-w>>
+"map <Esc>[1;9D <C-w><
 
 " Shortcuts for rails projects
 map <leader>gv :Files app/views<cr>
