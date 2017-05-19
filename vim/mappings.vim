@@ -27,12 +27,6 @@ nnoremap k gk
 " Spend hitting shift
 nnoremap ; :
 
-" Move between windows
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Resize split with Alt-arrow keys
 " iTerm2 Profile->key bindings, load xterm preset
 " alt-left ^[^[[A - Up
