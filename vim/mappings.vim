@@ -6,7 +6,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F2> :Files!<CR>
 map <F3> :Ag!<CR>
-"map <F4> :Buffers!<CR>
+map <F4> :Buffers!<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -116,6 +116,8 @@ nnoremap <leader>who oputs "-" * 60 + " #{} " + "-" * 60<esc>
 map <Leader>fn :let @+ = expand("%:t") \| echo '> ' . @+<CR>
 " *f*ile *p*ath, ex. /home/user/nvim/init.vim
 map <Leader>fp :let @+ = expand("%:p") \| echo '> ' . @+<CR>
+" copy file relative path with extensnion
+map <Leader>yy :let @+ = expand("%:r:h") \| echo '> ' . @+<CR>
 " *d*irectory *p*ath, ex. /home/user/nvim
 map <Leader>dp :let @+ = expand("%:p:h") \| echo '> ' . @+<CR>
 " *d*irectory *n*ame, ex. nvim
