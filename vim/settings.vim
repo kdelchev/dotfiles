@@ -211,3 +211,15 @@ let g:syntastic_check_on_wq = 0
 ":set background=dark
 ":color grb256
 
+" make test commands execute using dispatch.vim
+let test#strategy = 'dispatch'
+let g:test#preserve_screen = 1 " TODO: check this is working
+" TODO: add option to run suite with coverage
+"let test#ruby#rspec#options = {
+"  \ 'nearest': '--backtrace',
+"  \ 'file':    '--format documentation',
+"  \ 'suite':   '--tag ~slow',
+"\}
+
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
