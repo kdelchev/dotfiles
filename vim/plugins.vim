@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kchmck/vim-coffee-script'
   Plug 'keith/tmux.vim'
   Plug 'mattreduce/vim-mix'
+  Plug 'melonmanchan/vim-tmux-resizer'
   Plug 'mtscout6/vim-cjsx'
   Plug 'mxw/vim-jsx'
   Plug 'scrooloose/nerdtree'
