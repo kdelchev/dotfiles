@@ -111,7 +111,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <Leader>fn :let @+ = expand("%:t") \| echo '> ' . @+<CR>
 " *f*ile *p*ath, ex. /home/user/nvim/init.vim
 map <Leader>fp :let @+ = expand("%:p") \| echo '> ' . @+<CR>
-" copy file relative path with extensnion
+" copy file relative path with extension
 map <Leader>yy :let @+ = expand("%:r") . '.' . expand("%:e") \| echo '> ' . @+<CR>
 
 map <Leader>r :redraw!<cr>
