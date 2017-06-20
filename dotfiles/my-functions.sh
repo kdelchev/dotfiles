@@ -27,3 +27,7 @@ puma-log() {
   tail -f /Users/kdelchev/Library/Logs/puma-dev.log
 }
 # find . -name *.slim | xargs git diff --
+
+# TODO: add function to open last working files in vim
+# git diff HEAD~2 --name-only
+# Example: vim `git diff HEAD~2 --name-only`
