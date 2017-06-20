@@ -36,4 +36,6 @@ call plug#begin('~/.vim/plugged')
   "Plug 'scrooloose/syntastic'
   Plug 'chrisbra/Colorizer'
   Plug 'KabbAmine/vCoolor.vim'
+
+  Plug 'tpope/vim-eunuch'
 call plug#end()
