@@ -62,7 +62,17 @@ if has("autocmd")
 endif
 
 if &t_Co >= 256 || has("gui_running")
-  colorscheme zenburn
+  "colorscheme zenburn
+  "colorscheme busierbee
+  "colorscheme herald
+  "colorscheme ingretu " +++ in dark
+  "colorscheme inkpot " ++ in dark
+  "colorscheme jellyx
+  colorscheme lucius
+  "colorscheme obsidian " comments not visible
+  "colorscheme shobogenzo
+  "colorscheme synic " +++ in dark
+  "colorscheme xoria256
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -223,3 +233,5 @@ let g:test#preserve_screen = 1 " TODO: check this is working
 
 " Write all buffers before navigating from Vim to tmux pane
 let g:tmux_navigator_save_on_switch = 2
+
+set cursorcolumn
