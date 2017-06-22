@@ -17,6 +17,7 @@ a dotfiles='cd ~/dotfiles'
 a ent='cd ~/workspace/entrance'
 a db='bin/rails db -p'
 a gists='~/gists'
+a workspace='~/workspace'
 
 # Load rbenv automatically by appending the following to ~/.zshrc:
 eval "$(rbenv init -)"
