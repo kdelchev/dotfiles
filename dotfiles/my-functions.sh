@@ -3,6 +3,10 @@ if (command -v ag &> /dev/null); then
     git --no-pager grep "$@"
     ag "$@" `bundle show --paths`
   }
+
+  ag-vim() {
+    ag $1 | vim - -c "set hlsearch" -c "/$1"
+  }
 fi
 
 calc-stats() {
@@ -28,6 +32,8 @@ puma-log() {
 }
 # find . -name *.slim | xargs git diff --
 
+# Opens changed files in the last $1 commits
+# Exmaple: vim-last 2
 vim-last() {
   vim `git diff HEAD~$1 --name-only`
 }
