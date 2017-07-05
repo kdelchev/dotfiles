@@ -132,9 +132,3 @@ nmap gg ggzz
 
 nmap <leader>tig :!tig %<CR>
 nmap <leader>x :bd<CR>
-
-MapToggle sl list
-MapToggle sh hlsearch
-MapToggle sw wrap
-MapToggle ss spell
-MapToggle sc cursorcolumn
