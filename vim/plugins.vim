@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
 
   Plug 'airblade/vim-gitgutter'
+  Plug 'altercation/vim-colors-solarized'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'elixir-lang/vim-elixir'

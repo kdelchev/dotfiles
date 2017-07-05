@@ -62,13 +62,14 @@ if has("autocmd")
 endif
 
 if &t_Co >= 256 || has("gui_running")
+  colorscheme solarized
+  "colorscheme lucius
   "colorscheme zenburn
   "colorscheme busierbee
   "colorscheme herald
   "colorscheme ingretu " +++ in dark
   "colorscheme inkpot " ++ in dark
   "colorscheme jellyx
-  colorscheme lucius
   "colorscheme obsidian " comments not visible
   "colorscheme shobogenzo
   "colorscheme synic " +++ in dark
@@ -218,8 +219,9 @@ let g:syntastic_check_on_wq = 0
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ":set t_Co=256 " 256 colors
-":set background=dark
+set background=light
 ":color grb256
+let g:solarized_termcolors=256
 
 " make test commands execute using dispatch.vim
 let test#strategy = 'dispatch'
