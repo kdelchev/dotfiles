@@ -2,26 +2,6 @@
   name = Konstantin Delchev
   email = kdelchev@gmail.com
 
-[diff]
-[color]
-  ui = auto
-  branch = auto
-  diff = auto
-  status = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-
 [alias]
   h = log --pretty=format:\"%h %Cgreen%ad%Creset %Cblue::%Creset %s%d %Cblue[%an]%Creset\" --graph --date=short -15 # thanks, @smanolloff (https://github.com/smanolloff)
   hh = !git r -1
