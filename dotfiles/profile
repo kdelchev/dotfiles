@@ -27,3 +27,6 @@ eval "$(rbenv init -)"
 [[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 [[ -r ~/.my-functions.sh ]] && source ~/.my-functions.sh
 [[ -r ~/.zsh_profile ]] && source ~/.zsh_profile
+
+# https://github.com/jonas/tig/issues/214
+stty dsusp undef
