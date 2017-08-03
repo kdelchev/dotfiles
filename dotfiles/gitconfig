@@ -42,3 +42,5 @@
   trustExitCode = false
 [rerere]
 	enabled = true
+[rebase]
+	autosquash = true
