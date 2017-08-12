@@ -18,6 +18,7 @@ a ent='cd ~/workspace/entrance'
 a db='bin/rails db -p'
 a gists='~/gists'
 a workspace='~/workspace'
+a db_migrate='rake db:migrate db:test:prepare'
 
 # Load rbenv automatically by appending the following to ~/.zshrc:
 eval "$(rbenv init -)"
