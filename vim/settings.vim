@@ -105,12 +105,12 @@ set laststatus=2    " always show statusline
 set ruler           " always show cursor position
 set showmode        " display curent mode
 set showcmd         " display incomplete commands
-set relativenumber  " show relative number (hybrid mode)
+"set relativenumber  " show relative number (hybrid mode)
 set number          " show line numbers
 
 set wildmenu
 set wildignore=.keep,coverage,node_modules,tmp
-set wrap lbr                    " break by words
+set nowrap                      " break by words
 set showmatch                   " show matching brackets when hovering
 set viminfo='25,\"50,n~/.vim/.viminfo
 set splitright
@@ -220,6 +220,7 @@ let g:syntastic_check_on_wq = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ":set t_Co=256 " 256 colors
 set background=light
+"set background=dark
 ":color grb256
 let g:solarized_termcolors=256
 
