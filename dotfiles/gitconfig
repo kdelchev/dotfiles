@@ -15,7 +15,7 @@
   default = simple
 
 [core]
-  excludesfile = ~/.gitignore # this is the global .gitignore
+  excludesfile = ~/.gitignore
 
 [credential]
   helper = osxkeychain
@@ -40,7 +40,15 @@
 [difftool "kdiff3"]
   path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
   trustExitCode = false
+
 [rerere]
-	enabled = true
+  enabled = true
+
 [rebase]
-	autosquash = true
+  autosquash = true
+
+[pull]
+  rebase = preserve
+
+[color]
+  ui = true
