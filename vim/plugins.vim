@@ -18,11 +18,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'melonmanchan/vim-tmux-resizer'
   Plug 'mtscout6/vim-cjsx'
   Plug 'mxw/vim-jsx'
+  Plug 'rizzatti/dash.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'slim-template/vim-slim'
   Plug 'svermeulen/vim-easyclip'
   Plug 'tpope/vim-dispatch'
   Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-eunuch'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
@@ -39,8 +41,4 @@ call plug#begin('~/.vim/plugged')
   "Plug 'scrooloose/syntastic'
   Plug 'chrisbra/Colorizer'
   Plug 'KabbAmine/vCoolor.vim'
-
-  Plug 'rizzatti/dash.vim'
-
-  Plug 'tpope/vim-eunuch'
 call plug#end()
