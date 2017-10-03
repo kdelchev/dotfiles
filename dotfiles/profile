@@ -6,6 +6,18 @@ export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 [[ -d /usr/local/sbin ]] && export PATH="/usr/local/sbin:$PATH"
 [[ -d $HOME/.rbenv/bin ]] && export PATH="$HOME/.rbenv/bin:$PATH"
 
+# Load rbenv automatically by appending the following to ~/.zshrc:
+eval "$(rbenv init -)"
+
+[[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
+[[ -r ~/.zsh_profile ]] && source ~/.zsh_profile
+[[ -r ~/.passwords ]] && . ~/.passwords
+[[ -r ~/bin/tmuxinator.zsh ]] && source ~/bin/tmuxinator.zsh
+[[ -r ~/.my-functions.sh ]] && source ~/.my-functions.sh
+
+# https://github.com/jonas/tig/issues/214
+stty dsusp undef
+
 alias a='alias'
 a kill-puma-dev='date && pkill -USR1 puma-dev'
 a cag="clear && ag"
@@ -20,14 +32,6 @@ a gists='~/gists'
 a workspace='~/workspace'
 a db_migrate='rake db:migrate db:test:prepare'
 
-# Load rbenv automatically by appending the following to ~/.zshrc:
-eval "$(rbenv init -)"
-
-[[ -r ~/.passwords ]] && . ~/.passwords
-[[ -r ~/bin/tmuxinator.zsh ]] && source ~/bin/tmuxinator.zsh
-[[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
-[[ -r ~/.my-functions.sh ]] && source ~/.my-functions.sh
-[[ -r ~/.zsh_profile ]] && source ~/.zsh_profile
-
-# https://github.com/jonas/tig/issues/214
-stty dsusp undef
+a gst="scmpuff_status"
+a gb="git branch | fzf | sed 's+remotes/origin/++g' | xargs git checkout"
+a gbo="git branch --all | fzf | sed 's+remotes/origin/++g' | xargs git checkout"
