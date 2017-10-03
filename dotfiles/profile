@@ -35,3 +35,4 @@ a db_migrate='rake db:migrate db:test:prepare'
 a gst="scmpuff_status"
 a gb="git branch | fzf | sed 's+remotes/origin/++g' | xargs git checkout"
 a gbo="git branch --all | fzf | sed 's+remotes/origin/++g' | xargs git checkout"
+a gbds='git branch -D (git branch | grep -E squash_ | sed "s/ //g")'
