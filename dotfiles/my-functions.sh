@@ -59,6 +59,9 @@ squash-commits() {
   # Return to branch
   git checkout $current_branch &> /dev/null
 
+  # Copy the commit to clipboard
+  echo $squash_commit | pbcopy
+
   # Print commit SHA
   echo "Squashed into $squash_commit"
 }
