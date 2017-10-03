@@ -26,6 +26,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-rhubarb' " used by vim-fugitive
   Plug 'tpope/vim-surround'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -38,6 +39,8 @@ call plug#begin('~/.vim/plugged')
   "Plug 'scrooloose/syntastic'
   Plug 'chrisbra/Colorizer'
   Plug 'KabbAmine/vCoolor.vim'
+
+  Plug 'rizzatti/dash.vim'
 
   Plug 'tpope/vim-eunuch'
 call plug#end()
