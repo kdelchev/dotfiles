@@ -25,7 +25,7 @@ a app="cd ~/webapps/application"
 a monolith="cd ~/webapps/monolith"
 a revapp="cd ~/webapps/reviewer-app"
 a nospring='spring stop && DISABLE_SPRING=1 &&'
-a dotfiles='cd ~/dotfiles'
+a dot='cd ~/dotfiles'
 a ent='cd ~/workspace/entrance'
 a db='bin/rails db -p'
 a gists='~/gists'
