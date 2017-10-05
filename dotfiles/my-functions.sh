@@ -65,3 +65,10 @@ squash-commits() {
   # Print commit SHA
   echo "Squashed into $squash_commit"
 }
+
+# Print Pull Request
+ppr() {
+  repo=`git config --get remote.origin.url | sed 's/\.git$//' | cut -d':' -f2-`
+  current_branch=`git rev-parse --abbrev-ref HEAD`
+  echo "https://github.com/$repo/compare/$current_branch"
+}
