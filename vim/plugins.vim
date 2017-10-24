@@ -38,7 +38,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/taglist.vim'
   Plug 'janko-m/vim-test'
   "Plug 'terryma/vim-multiple-cursors' " C-n (toggle relative line numbers collision)
-  "Plug 'scrooloose/syntastic'
   Plug 'chrisbra/Colorizer'
   Plug 'KabbAmine/vCoolor.vim'
+  Plug 'w0rp/ale'
 call plug#end()

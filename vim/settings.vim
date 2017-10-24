@@ -238,3 +238,8 @@ let g:test#preserve_screen = 1 " TODO: check this is working
 let g:tmux_navigator_save_on_switch = 2
 
 set cursorcolumn
+
+let g:ale_fixers = {
+\   'ruby': ['rails_best_practices', 'rubocop', 'ruby', 'brakeman', 'reek'],
+\}
+let g:airline#extensions#ale#enabled = 1
