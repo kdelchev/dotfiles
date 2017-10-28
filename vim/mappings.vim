@@ -7,6 +7,7 @@
 map <F2> :Files!<CR>
 map <F3> :Ag!<CR>
 map <F4> :Buffers!<CR>
+map <F8> :%s/<C-r><C-w>//gc<Left><Left><Left>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -98,6 +99,7 @@ map W <Nop>
 " puts the caller
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 nnoremap <leader>who oputs "-" * 60 + " #{} " + "-" * 60<esc>
+nnoremap <leader>d obinding.pry<esc>
 
 " in-vim serch results
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
