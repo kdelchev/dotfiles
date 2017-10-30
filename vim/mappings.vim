@@ -134,6 +134,7 @@ nmap gg ggzz
 
 nmap <leader>tig :!tig %<CR>
 nmap <leader>x :BD<CR>
+nmap <leader>X :bd<CR>
 map <C-n> 20zl
 map <C-b> 20zh
 
