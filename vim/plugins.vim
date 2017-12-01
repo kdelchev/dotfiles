@@ -26,7 +26,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'mileszs/ack.vim'
     " https://github.com/mileszs/ack.vim#usage
   Plug 'qpkorr/vim-bufkill'            " buffer manager without closing splits
-
   Plug 'tpope/vim-fugitive'            " illegal git wrapper
     " Nice stuff to stage code
     " https://github.com/tpope/vim-fugitive#screencasts
@@ -46,14 +45,14 @@ call plug#begin('~/.vim/plugged')
     " C-j C-k to navigate between errors
 
   " tmux
-  Plug 'christoomey/vim-tmux-navigator'
-  Plug 'melonmanchan/vim-tmux-resizer'
+  Plug 'christoomey/vim-tmux-navigator'   " C-hjkl navigation
+  Plug 'melonmanchan/vim-tmux-resizer'    " M-hjkl resizing
+  Plug 'keith/tmux.vim'                   " syntax highlight for tmux
 
   " Other
   Plug 'altercation/vim-colors-solarized'
     " ToggleBG
   Plug 'slim-template/vim-slim'           " syntax highlight for slim template
-  Plug 'keith/tmux.vim'                   " syntax highlight for tmux
   Plug 'mtscout6/vim-cjsx'                " syntax highlight for cjsx
   Plug 'mxw/vim-jsx'                      " syntax highlight for react jsx
   Plug 'gabrielelana/vim-markdown'        " syntax highlight for markdown and support
@@ -62,17 +61,20 @@ call plug#begin('~/.vim/plugged')
   Plug 'KabbAmine/vCoolor.vim'            " colors picker
 
   " Elixir
-  Plug 'elixir-lang/vim-elixir'
-  Plug 'mattreduce/vim-mix'
+  " Plug 'elixir-lang/vim-elixir'
+  " Plug 'mattreduce/vim-mix'
 
   " Go
-  Plug 'fatih/vim-go'
+  " Plug 'fatih/vim-go'
 
+  " TODO
   " https://github.com/tpope/vim-unimpaired
   " https://github.com/tpope/vim-commentary
+  " https://github.com/tomtom/tcomment_vim
   " https://github.com/sheerun/vim-polyglot
   " https://github.com/tpope/vim-sleuth       - automatic identation
   " https://github.com/wellle/targets.vim     - additional text objects
+  " https://github.com/terryma/vim-expand-region
 call plug#end()
 
 colorscheme solarized
@@ -145,4 +147,5 @@ let g:airline#extensions#ale#enabled = 1
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+  "let g:ag_lhandler="topleft lopen"
 endif

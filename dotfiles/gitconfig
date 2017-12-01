@@ -52,3 +52,5 @@
 
 [color]
   ui = true
+[init]
+	templatedir = ~/.git_template

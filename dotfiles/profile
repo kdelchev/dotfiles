@@ -31,6 +31,7 @@ a db='bin/rails db -p'
 a gists='~/gists'
 a workspace='~/workspace'
 a db_migrate='rake db:migrate db:test:prepare'
+a cpwd='pwd | pbcopy'
 
 a gst="scmpuff_status"
 a gbi="git branch | fzf | sed 's+remotes/origin/++g' | xargs git checkout"
