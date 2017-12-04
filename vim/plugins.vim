@@ -68,7 +68,7 @@ call plug#begin('~/.vim/plugged')
   " Plug 'fatih/vim-go'
 
   " TODO
-  " https://github.com/tpope/vim-unimpaired
+  Plug 'tpope/vim-unimpaired'
   " https://github.com/tpope/vim-commentary
   " https://github.com/tomtom/tcomment_vim
   " https://github.com/sheerun/vim-polyglot
