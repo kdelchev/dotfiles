@@ -139,3 +139,4 @@ map <C-n> 20zl
 map <C-b> 20zh
 
 map <leader>gb :Gblame<CR>
+map Q <Esc>
