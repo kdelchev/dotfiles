@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
     " <leader>hu - unstage hunk
     " <leader>hp - preview hunk changes
   Plug 'editorconfig/editorconfig-vim' " editor configuration
-  Plug 'danchoi/ruby_bashrockets.vim'  " toggle hash style Bashrockets Hashrockets
   Plug 'rizzatti/dash.vim'             " Dash.app
   Plug 'scrooloose/nerdtree'           " file and dir list
     Plug 'Xuyuanp/nerdtree-git-plugin' " show git status in nerdtree
@@ -25,6 +24,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'nelstrom/vim-visual-star-search' " visual select & search
   Plug 'mileszs/ack.vim'
     " https://github.com/mileszs/ack.vim#usage
+  Plug 'tyok/nerdtree-ack'
   Plug 'qpkorr/vim-bufkill'            " buffer manager without closing splits
   Plug 'tpope/vim-fugitive'            " illegal git wrapper
     " Nice stuff to stage code
@@ -35,13 +35,14 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'vim-ruby/vim-ruby'
   Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-endwise'             " close tags in ruby
-  Plug 'vim-airline/vim-airline'        " airline
-  Plug 'vim-airline/vim-airline-themes' " theme for airline
-  Plug 'vim-scripts/Gist.vim'           " vimscript for gist
-  Plug 'vim-scripts/taglist.vim'        " tag list
-  Plug 'janko-m/vim-test'               " test launcher
-  Plug 'w0rp/ale'                       " lint engine
+  Plug 'tpope/vim-endwise'                " close tags in ruby
+  Plug 'vim-airline/vim-airline'          " airline
+  Plug 'vim-airline/vim-airline-themes'   " theme for airline
+  Plug 'vim-scripts/Gist.vim'             " vimscript for gist
+  Plug 'vim-scripts/taglist.vim'          " tag list
+  Plug 'janko-m/vim-test'                 " test launcher
+  Plug 'w0rp/ale'                         " lint engine
+  Plug 'danchoi/ruby_bashrockets.vim'     " toggle hash style Bashrockets Hashrockets
     " C-j C-k to navigate between errors
 
   " tmux
@@ -59,7 +60,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kchmck/vim-coffee-script'         " syntax highlight for coffeescript and support
   Plug 'chrisbra/Colorizer'               " colors stuff
   Plug 'KabbAmine/vCoolor.vim'            " colors picker
-
+  Plug 'flomotlik/vim-livereload'         " reload browser on save
   " Elixir
   " Plug 'elixir-lang/vim-elixir'
   " Plug 'mattreduce/vim-mix'
