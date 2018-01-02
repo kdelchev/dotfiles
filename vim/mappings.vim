@@ -140,3 +140,7 @@ map <C-b> 20zh
 
 map <leader>gb :Gblame<CR>
 map Q <Esc>
+map <Leader><Left> 5<C-w><
+map <Leader><Right> 5<C-w>>
+map <Leader><Up> 5<C-w>-
+map <Leader><Down> 5<C-w>+
