@@ -60,7 +60,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kchmck/vim-coffee-script'         " syntax highlight for coffeescript and support
   Plug 'chrisbra/Colorizer'               " colors stuff
   Plug 'KabbAmine/vCoolor.vim'            " colors picker
-  Plug 'flomotlik/vim-livereload'         " reload browser on save
+  " Plug 'flomotlik/vim-livereload'         " reload browser on save
   " Elixir
   " Plug 'elixir-lang/vim-elixir'
   " Plug 'mattreduce/vim-mix'
