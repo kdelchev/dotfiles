@@ -128,6 +128,7 @@ let g:fzf_colors =
 "set statusline+=%*
 
 " make test commands execute using dispatch.vim
+let test#runner_commands = ['Jasmine']
 let test#strategy = 'dispatch'
 let g:test#preserve_screen = 1 " TODO: check this is working
 " TODO: add option to run suite with coverage
