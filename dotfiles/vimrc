@@ -14,3 +14,15 @@ source $HOME/.vim/settings.vim
 source $HOME/.vim/plugins.vim
 source $HOME/.vim/functions.vim
 source $HOME/.vim/mappings.vim
+
+au BufRead,BufNewFile * let b:start_time=localtime()
+au CursorHold * call UpdateFile()
+" only write if needed and update the start time after the save
+function! UpdateFile()
+  if ((localtime() - b:start_time) >= 2)
+    update
+    let b:start_time=localtime()
+  endif
+endfunction
+
+au BufWritePre * let b:start_time=localtime()
