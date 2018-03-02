@@ -61,7 +61,7 @@ if has("autocmd")
 
 endif
 
-set background=light
+set background=dark
 set hlsearch " highlight previous search
 syntax sync fromstart " TODO: check this setting
 syntax on    " switch syntax highlighting on, when the terminal has colors
