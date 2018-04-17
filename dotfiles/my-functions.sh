@@ -72,3 +72,7 @@ ppr() {
   current_branch=`git rev-parse --abbrev-ref HEAD`
   echo "https://github.com/$repo/compare/$current_branch"
 }
+
+reset-test-db() {
+  `bin/rails db:environment:set RAILS_ENV=test db:drop db:create db:structure:load db:test:prepare`
+}
