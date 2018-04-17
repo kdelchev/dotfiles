@@ -101,7 +101,7 @@ nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 nnoremap <leader>who oputs "-" * 60 + " #{} " + "-" * 60<esc>
 nnoremap <leader>d obinding.pry<esc>
 
-" in-vim serch results
+" in-vim search results
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "p method(:render).source_location
