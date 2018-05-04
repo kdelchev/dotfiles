@@ -27,9 +27,6 @@ kill9-all() {
   find-all $1 | xargs kill -9 --
 }
 
-puma-log() {
-  tail -f /Users/kdelchev/Library/Logs/puma-dev.log
-}
 # find . -name *.slim | xargs git diff --
 
 # Opens changed files in the last $1 commits
@@ -71,8 +68,4 @@ ppr() {
   repo=`git config --get remote.origin.url | sed 's/\.git$//' | cut -d':' -f2-`
   current_branch=`git rev-parse --abbrev-ref HEAD`
   echo "https://github.com/$repo/compare/$current_branch"
-}
-
-reset-test-db() {
-  `bin/rails db:environment:set RAILS_ENV=test db:drop db:create db:structure:load db:test:prepare`
 }

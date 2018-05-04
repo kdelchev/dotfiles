@@ -1,5 +1,6 @@
 export EDITOR=vim
 export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
+export BUNDLE_PATH=.bundle
 #export BROWSER='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 [[ -d ~/bin ]] && export PATH=~/bin:$PATH
@@ -40,3 +41,6 @@ a gbo="git branch --all | fzf | sed 's+remotes/origin/++g' | xargs git checkout"
 a gbds='git branch -D $(git branch | grep -E squash_ | sed "s/ //g")'
 a gp="ppr | git push"
 a oppr="open $(ppr)"
+a tig-reflog="git reflog --pretty=raw | tig --pretty=raw"
+a reset-test-db="bin/rails db:environment:set RAILS_ENV=test db:drop db:create db:structure:load db:test:prepare"
+a puma-log="tail -f /Users/kdelchev/Library/Logs/puma-dev.log"
