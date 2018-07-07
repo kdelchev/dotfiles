@@ -2,6 +2,7 @@ export EDITOR=vim
 export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 export BUNDLE_PATH=.bundle
 #export BROWSER='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 [[ -d ~/bin ]] && export PATH=~/bin:$PATH
 [[ -d /usr/local/sbin ]] && export PATH="/usr/local/sbin:$PATH"
@@ -23,6 +24,8 @@ alias a='alias'
 a kill-puma-dev='date && pkill -USR1 puma-dev'
 a cag="clear && ag"
 a app="cd ~/webapps/application"
+a backend="cd ~/webapps/onetap-backend"
+a online="cd ~/webapps/web-1tap-online"
 a monolith="cd ~/webapps/monolith"
 a revapp="cd ~/webapps/reviewer-app"
 a nospring='spring stop && DISABLE_SPRING=1 &&'
