@@ -64,6 +64,8 @@ call plug#begin('~/.vim/plugged')
     " https://github.com/othree/yajs.vim
     " https://github.com/othree/es.next.syntax.vim
   " Plug 'flomotlik/vim-livereload'         " reload browser on save
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Quramy/tsuquyomi'
 
   " Elixir
   " Plug 'elixir-lang/vim-elixir'
@@ -74,12 +76,12 @@ call plug#begin('~/.vim/plugged')
 
   " TODO
   Plug 'tpope/vim-unimpaired'
+  Plug 'terryma/vim-expand-region'
   " https://github.com/tpope/vim-commentary
   " https://github.com/tomtom/tcomment_vim
   " https://github.com/sheerun/vim-polyglot
   " https://github.com/tpope/vim-sleuth       - automatic identation
   " https://github.com/wellle/targets.vim     - additional text objects
-  " https://github.com/terryma/vim-expand-region
 call plug#end()
 
 colorscheme solarized
@@ -149,6 +151,7 @@ let g:tmux_navigator_save_on_switch = 2
 let g:ale_fixers = {
 \   'ruby': ['rails_best_practices', 'rubocop', 'ruby', 'brakeman', 'reek'],
 \}
+
 let g:airline#extensions#ale#enabled = 1
 
 if executable('ag')
