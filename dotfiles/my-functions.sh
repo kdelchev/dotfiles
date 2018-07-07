@@ -69,3 +69,7 @@ ppr() {
   current_branch=`git rev-parse --abbrev-ref HEAD`
   echo "https://github.com/$repo/compare/$current_branch"
 }
+
+oc() {
+  open "https://github.com/receipt-bank/application/commit/$1"
+}
