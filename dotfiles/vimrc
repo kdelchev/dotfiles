@@ -199,11 +199,22 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-endwise'                " close tags in ruby
   Plug 'vim-airline/vim-airline'          " airline
+    " https://github.com/vim-airline/vim-airline
+    " :help airline
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#bufferline#enabled = 1
+      let g:airline_theme = 'cool'
   Plug 'vim-airline/vim-airline-themes'   " theme for airline
   Plug 'vim-scripts/Gist.vim'             " vimscript for gist
   Plug 'vim-scripts/taglist.vim'          " tag list
   Plug 'janko-m/vim-test'                 " test launcher
   Plug 'w0rp/ale'                         " lint engine
+    let g:ale_fixers = {
+    \   'ruby': ['rails_best_practices', 'rubocop', 'ruby', 'brakeman', 'reek'],
+    \}
+
+    let g:airline#extensions#ale#enabled = 1
   Plug 'danchoi/ruby_bashrockets.vim'     " toggle hash style Bashrockets Hashrockets
     " C-j C-k to navigate between errors
 
@@ -223,11 +234,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'chrisbra/Colorizer'               " colors stuff
   Plug 'KabbAmine/vCoolor.vim'            " colors picker
   Plug 'pangloss/vim-javascript'          " syntax highlight for javascript
+  Plug 'leafgarland/typescript-vim'       " syntax highlight for typescript
+  Plug 'HerringtonDarkholme/yats.vim'     " more syntax highlighting on dom keywords
     " https://github.com/othree/yajs.vim
     " https://github.com/othree/es.next.syntax.vim
   " Plug 'flomotlik/vim-livereload'         " reload browser on save
-  Plug 'leafgarland/typescript-vim'
-  Plug 'Quramy/tsuquyomi'
 
   " Elixir
   " Plug 'elixir-lang/vim-elixir'
@@ -255,12 +266,6 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 " :help nerdtree
 let g:NERDTreeShowHidden = 1
 
-" https://github.com/vim-airline/vim-airline
-" :help airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#bufferline#enabled = 1
-  let g:airline_theme = 'cool'
 
 
 " https://github.com/junegunn/fzf.vim
@@ -310,11 +315,6 @@ let g:test#preserve_screen = 1 " TODO: check this is working
 let g:tmux_navigator_save_on_switch = 2
 
 
-let g:ale_fixers = {
-\   'ruby': ['rails_best_practices', 'rubocop', 'ruby', 'brakeman', 'reek'],
-\}
-
-let g:airline#extensions#ale#enabled = 1
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
