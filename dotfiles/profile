@@ -46,5 +46,26 @@ a gp="ppr | git push"
 a oppr="open $(ppr)"
 a tig-reflog="git reflog --pretty=raw | tig --pretty=raw"
 a reset-test-db="bin/rails db:environment:set RAILS_ENV=test db:drop db:create db:structure:load db:test:prepare"
-a puma-log="tail -f /Users/kdelchev/Library/Logs/puma-dev.log"
+a puma-log="tail -f ~/Library/Logs/puma-dev.log"
 a down="youtube-dl --extract-audio --audio-format mp3"
+
+# pyenv stuff
+
+export PATH="~/.pyenv/shims:${PATH}"
+export PYENV_SHELL=zsh
+source '/usr/local/Cellar/pyenv/1.2.5/libexec/../completions/pyenv.zsh'
+command pyenv rehash 2>/dev/null
+pyenv() {
+  local command
+  command="${1:-}"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(pyenv "sh-$command" "$@")";;
+  *)
+    command pyenv "$command" "$@";;
+  esac
+}
