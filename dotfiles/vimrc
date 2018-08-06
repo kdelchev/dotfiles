@@ -78,7 +78,7 @@ if has("autocmd")
 
 endif
 
-set background=dark
+set background=light
 set hlsearch " highlight previous search
 syntax sync fromstart " TODO: check this setting
 syntax on    " switch syntax highlighting on, when the terminal has colors
@@ -86,10 +86,7 @@ syntax on    " switch syntax highlighting on, when the terminal has colors
 if executable('ag')
   "let g:ackprg = 'ag --vimgrep'
   "let g:ackprg = 'ag --vimgrep --smart-case'
-  "cnoreabbrev ag Ack
-  "cnoreabbrev aG Ack
-  "cnoreabbrev Ag Ack
-  "cnoreabbrev AG Ack
+  cnoreabbrev ag Ack
 
   set grepprg=ag\ --nogroup\ --nocolor
 endif
