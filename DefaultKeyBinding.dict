@@ -1,0 +1,18 @@
+/* ~/Library/KeyBindings/DefaultKeyBindings.dict */
+{
+  /* Remap Home / End keys */
+  "\UF729"   = "moveToBeginningOfLine:";                       /* Home Button */
+  "\UF72B"   = "moveToEndOfLine:";                             /* End Button */
+  "$\UF729"  = "moveToBeginningOfLineAndModifySelection:";     /* Shift + Home Button */
+  "$\UF72B"  = "moveToEndOfLineAndModifySelection:";           /* Shift + End Button */
+  "@\UF729"  = "moveToBeginningOfDocument:";                   /* Cmd + Home Button */
+  "@\UF72B"  = "moveToEndOfDocument:";                         /* Cmd + End Button */
+  "@$\UF729" = "moveToBeginningOfDocumentAndModifySelection:"; /* Shift + Cmd + Home Button */
+  "@$\UF72B" = "moveToEndOfDocumentAndModifySelection:";       /* Shift + Cmd + End Button */
+
+  /* Remap Left / Rigth arrow keys */
+  "^\Uf702"  = "moveWordLeft:";                    /* Ctrl + Left */
+  "^\Uf703"  = "moveWordRight:";                   /* Ctrl + Right */
+  "^$\Uf702" = "moveWordLeftAndModifySelection:";  /* Shift + Ctrl + Left */
+  "^$\Uf703" = "moveWordRightAndModifySelection:"; /* Shift + Ctrl + Right */
+}
