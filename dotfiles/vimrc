@@ -129,6 +129,7 @@ set textwidth=120
 set colorcolumn=+1
 highlight ColorColumn ctermbg=gray "set to whatever you like
 set cursorline                " highlight current line
+set cursorcolumn              " highlight current column
 set showtabline=2             " Always show tab bar at the top
 set shell=zsh
 
@@ -150,7 +151,6 @@ set complete-=t
 set matchtime=1
 set timeoutlen=1000 ttimeoutlen=0
 
-set cursorcolumn
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
