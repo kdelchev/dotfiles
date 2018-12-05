@@ -2,3 +2,7 @@
 unsetopt nomatch
 # Do not share history between iTerm tabs
 unsetopt share_history
+
+
+ export NVM_DIR="$HOME/.nvm"
+ . "/usr/local/opt/nvm/nvm.sh"
