@@ -151,7 +151,9 @@ set complete-=t
 set matchtime=1
 set timeoutlen=1000 ttimeoutlen=0
 
-
+" vim optimizations - people say this is making vim fast
+set lazyredraw
+set ttyfast
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
