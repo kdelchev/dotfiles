@@ -152,6 +152,7 @@ set matchtime=1
 set timeoutlen=1000 ttimeoutlen=0
 
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -270,7 +271,7 @@ call plug#begin('~/.vim/plugged')
 
   " TODO
   Plug 'tpope/vim-unimpaired'
-  Plug 'terryma/vim-expand-region'
+  " Plug 'terryma/vim-expand-region'
   " https://github.com/tpope/vim-commentary
   " https://github.com/tomtom/tcomment_vim
   " https://github.com/sheerun/vim-polyglot
@@ -279,7 +280,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 colorscheme solarized
-call togglebg#map("<F5>") " TODO: remove mapping
+call togglebg#map("<leader>c") " TODO: remove mapping
 
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
@@ -528,6 +529,7 @@ map <Leader>fn :let @+ = expand("%:t") \| echo '> ' . @+<CR>
 map <Leader>fp :let @+ = expand("%:p") \| echo '> ' . @+<CR>
 " copy file relative path with extension
 map <Leader>yy :let @+ = expand("%:r") . '.' . expand("%:e") \| echo '> ' . @+<CR>
+map <Leader>yl :let @+ = expand("%:r") . '.' . expand("%:e") . ":" . line(".") \| echo '> ' . @+. ":" . line(".")<CR>
 
 map <Leader>r :redraw!<cr>
 
@@ -552,6 +554,7 @@ map <C-n> 20zl
 map <C-b> 20zh
 
 map <leader>gb :Gblame<CR>
+map <leader>go :Gbrowse master:%<CR>
 map Q <Esc>
 map <Leader><Left> 5<C-w><
 map <Leader><Right> 5<C-w>>
