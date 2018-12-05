@@ -71,5 +71,12 @@ ppr() {
 }
 
 oc() {
-  open "https://github.com/receipt-bank/application/commit/$1"
+  repo_path=`git rev-parse --show-toplevel`
+  repo=`basename $repo_path`
+  open "https://github.com/receipt-bank/$repo/commit/$1"
+}
+
+vim-line() {
+  a=$1
+  vim +${a#*:*} ${a%:*}
 }
