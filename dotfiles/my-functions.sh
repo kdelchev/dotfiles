@@ -80,3 +80,15 @@ vim-line() {
   a=$1
   vim +${a#*:*} ${a%:*}
 }
+
+alias kuberun='kubectl -n ${NS:-globe} exec -ti $(kubepods | fzf | sed "s/pods\///g")'
+alias kubepods='kubectl get pods -a -n ${NS:-globe} -o name'
+alias kubeget='kubectl -a -n ${NS:-globe} get'
+alias kubelogs='kubepods | fzf | xargs kubectl -n ${NS:-globe} logs --tail=500 --timestamps -f'
+alias kubedesc='kubepods | fzf | xargs kubectl -n ${NS:-globe} describe'
+alias kubessh='kuberun bash'
+alias k='kubectl -n ${NS:-globe}'
+
+ns() {
+  export NS=$(kubectl get ns -o name | sed "s/namespaces\///g" | fzf)
+}
