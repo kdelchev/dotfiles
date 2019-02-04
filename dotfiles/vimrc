@@ -76,6 +76,8 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
+  " Wrap Git commit messages wrapping and spell checking
+  autocmd FileType gitcommit set spell tw=72
 endif
 
 set background=light
