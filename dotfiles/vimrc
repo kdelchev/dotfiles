@@ -281,6 +281,7 @@ call plug#begin('~/.vim/plugged')
   " https://github.com/tpope/vim-sleuth       - automatic identation
   " https://github.com/wellle/targets.vim     - additional text objects
   Plug 'Lokaltog/vim-easymotion'
+  Plug 'vimwiki/vimwiki'
   " Plug 'epeli/slimux'                              " send text from vim to another tmux pane
   " Plug 'jpalardy/vim-slime.git'
   " Plug 'godlygeek/tabular'                  " Vim script for text filtering and alignment; also required by vim-markdown
