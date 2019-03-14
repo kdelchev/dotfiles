@@ -5,4 +5,5 @@
 start_server.sh
 .irbrc
 tags
-.idea
+
+.bundle
