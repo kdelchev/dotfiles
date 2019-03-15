@@ -92,3 +92,8 @@ alias k='kubectl -n ${NS:-globe}'
 ns() {
   export NS=$(kubectl get ns -o name | sed "s/namespaces\///g" | fzf)
 }
+
+# description "Fuzzy-find ssh host and ssh into it"
+fssh() {
+  ag '^Host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf --height 10% | xargs -o ssh
+}
