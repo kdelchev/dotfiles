@@ -158,7 +158,8 @@ set lazyredraw
 set ttyfast
 
 " Make gf work for bundled gems
-set path+=.bundle/**
+" set path+=./**
+" set path+=.bundle/**
 set suffixesadd+=.rb
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -265,6 +266,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'pangloss/vim-javascript'          " syntax highlight for javascript
   Plug 'leafgarland/typescript-vim'       " syntax highlight for typescript
   Plug 'HerringtonDarkholme/yats.vim'     " more syntax highlighting on dom keywords
+  " Plug 'elzr/vim-json' " does not seems useful
     " https://github.com/othree/yajs.vim
     " https://github.com/othree/es.next.syntax.vim
   " Plug 'flomotlik/vim-livereload'         " reload browser on save
@@ -288,7 +290,6 @@ call plug#begin('~/.vim/plugged')
   " Plug 'epeli/slimux'                              " send text from vim to another tmux pane
   " Plug 'jpalardy/vim-slime.git'
   " Plug 'godlygeek/tabular'                  " Vim script for text filtering and alignment; also required by vim-markdown
-  " Plug 'elzr/vim-json'
   " Plug 'ayu-theme/ayu-vim'
   " Plug 'vim-scripts/ruby.vim--IGREQUE'      " Improved Indendation
   " Plug 'othree/javascript-libraries-syntax.vim'
@@ -300,6 +301,9 @@ call plug#begin('~/.vim/plugged')
   " Plug 'benmills/vimux'
   " Plug 'calebsmith/vim-lambdify'
   " Plug 'ngmy/vim-rubocop'
+  " Slimux for vim
+  " Saka key
+  " Sciruby/rubex
 call plug#end()
 
 colorscheme solarized
@@ -410,6 +414,18 @@ function! OpenChangedFiles()
 endfunction
 command! OpenChangedFiles :call OpenChangedFiles()
 
+function! StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+command! StripTrailingWhitespaces :call StripTrailingWhitespaces()
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -418,7 +434,7 @@ function! <SID>SynStack()
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
