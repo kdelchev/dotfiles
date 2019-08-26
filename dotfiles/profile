@@ -23,17 +23,8 @@ stty dsusp undef
 alias a='alias'
 a kill-puma-dev='date && pkill -USR1 puma-dev'
 a cag="clear && ag"
-a app="cd ~/webapps/application"
-a backend="cd ~/webapps/onetap-backend"
-a online="cd ~/webapps/web-1tap-online"
-a monolith="cd ~/webapps/monolith"
-a revapp="cd ~/webapps/reviewer-app"
 a nospring='spring stop && DISABLE_SPRING=1 &&'
-a dot='cd ~/dotfiles'
-a ent='cd ~/workspace/entrance'
 a db='bin/rails db -p'
-a gists='~/gists'
-a workspace='~/workspace'
 a db_migrate='rake db:migrate db:test:prepare'
 a cpwd='pwd | pbcopy'
 a gpf='gp --force-with-lease'
@@ -46,6 +37,7 @@ a gbds='git branch -D $(git branch | grep -E squash_ | sed "s/ //g")'
 a gp="ppr | git push"
 a oppr="open $(ppr)"
 a tig-reflog="git reflog --pretty=raw | tig --pretty=raw"
+a gfix="gc --fixup"
 a reset-test-db="bin/rails db:environment:set RAILS_ENV=test db:drop db:create db:structure:load db:test:prepare"
 a puma-log="tail -f ~/Library/Logs/puma-dev.log"
 a down="youtube-dl --extract-audio --audio-format mp3"
@@ -55,7 +47,7 @@ unalias rg
 
 export PATH="~/.pyenv/shims:${PATH}"
 export PYENV_SHELL=zsh
-source '/usr/local/Cellar/pyenv/1.2.5/libexec/../completions/pyenv.zsh'
+source '/usr/local/Cellar/pyenv/1.2.8/libexec/../completions/pyenv.zsh'
 command pyenv rehash 2>/dev/null
 pyenv() {
   local command
