@@ -71,6 +71,9 @@ ppr() {
 }
 
 oc() {
+  # git remote get-url origin                                                                                     1 ↵
+  # git@github.com:receipt-bank/application.git
+
   repo_path=`git rev-parse --show-toplevel`
   repo=`basename $repo_path`
   open "https://github.com/receipt-bank/$repo/commit/$1"
@@ -95,5 +98,9 @@ ns() {
 
 # description "Fuzzy-find ssh host and ssh into it"
 fssh() {
-  ag '^Host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf --height 10% | xargs -o ssh
+  rg '^Host [^*]' ~/.ssh/config | cut -d ' ' -f 2 | fzf --height 10% | xargs -o ssh
+}
+
+ct() {
+  ctags -R -f ./.git/tags .
 }
