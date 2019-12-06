@@ -288,6 +288,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Lokaltog/vim-easymotion'
   Plug 'vimwiki/vimwiki'
   " Plug 'epeli/slimux'                              " send text from vim to another tmux pane
+  Plug 'jpalardy/vim-slime'
   " Plug 'jpalardy/vim-slime.git'
   " Plug 'godlygeek/tabular'                  " Vim script for text filtering and alignment; also required by vim-markdown
   " Plug 'ayu-theme/ayu-vim'
@@ -301,9 +302,9 @@ call plug#begin('~/.vim/plugged')
   " Plug 'benmills/vimux'
   " Plug 'calebsmith/vim-lambdify'
   " Plug 'ngmy/vim-rubocop'
-  " Slimux for vim
   " Saka key
   " Sciruby/rubex
+  Plug 'lmeijvogel/vim-yaml-helper'
 call plug#end()
 
 "colorscheme solarized
@@ -541,6 +542,7 @@ map W <Nop>
 nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>
 nnoremap <leader>who oputs "-" * 60 + " #{} " + "-" * 60<esc>
 nnoremap <leader>d obinding.pry<esc>
+nnoremap <leader>c oconsole.log<esc>
 
 " in-vim search results
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -588,14 +590,22 @@ map <Leader><Right> 5<C-w>>
 map <Leader><Up> 5<C-w>-
 map <Leader><Down> 5<C-w>+
 
-au BufRead,BufNewFile * let b:start_time=localtime()
-au CursorHold * call UpdateFile()
-" only write if needed and update the start time after the save
-function! UpdateFile()
-  if ((localtime() - b:start_time) >= 2)
-    update
-    let b:start_time=localtime()
-  endif
-endfunction
+"au BufRead,BufNewFile * let b:start_time=localtime()
+"au CursorHold * call UpdateFile()
+"" only write if needed and update the start time after the save
+"function! UpdateFile()
+"  if ((localtime() - b:start_time) >= 2)
+"    update
+"    let b:start_time=localtime()
+"  endif
+"endfunction
+"
+"au BufWritePre * let b:start_time=localtime()
 
-au BufWritePre * let b:start_time=localtime()
+
+" Slimux config
+let g:slime_target = "tmux"
+let g:slime_dont_ask_default = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
+map <Leader>r <Plug>SlimeLineSend
+map <Leader>e <Plug>SlimeRegionSend
