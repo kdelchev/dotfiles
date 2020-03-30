@@ -2,7 +2,7 @@ export EDITOR=vim
 export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 export BUNDLE_PATH=.bundle
 #export BROWSER='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fd --hidden --type f'
 
 [[ -d ~/bin ]] && export PATH=~/bin:$PATH
 [[ -d /usr/local/sbin ]] && export PATH="/usr/local/sbin:$PATH"
