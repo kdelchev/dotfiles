@@ -5,5 +5,18 @@
 start_server.sh
 .irbrc
 tags
+config/configby.variables.docker.yml
 
 .bundle
+.git
+.vscode
+
+demo.rb
+jump.rb
+messages.rb
+onetap.rb
+staging.rb
+production.rb
+temp.rb
+query.sql
+jump.sql

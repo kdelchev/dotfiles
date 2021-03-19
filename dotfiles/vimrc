@@ -238,12 +238,25 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/Gist.vim'             " vimscript for gist
   Plug 'vim-scripts/taglist.vim'          " tag list
   Plug 'janko-m/vim-test'                 " test launcher
-  Plug 'w0rp/ale'                         " lint engine
+  Plug 'dense-analysis/ale'               " lint engine
+    let g:ale_fix_on_save = 1
+    let g:ale_completion_enabled = 1
+    "let g:ale_linters_explicit = 1
+    let g:ale_ruby_rubocop_executable = 'bundle exec rubocop'
+    let g:ale_ruby_rubocop_options = '--autocorrect'
+
+    let g:ale_linters = {
+    \   'javascript': ['eslint'],
+    \   'ruby': ['rubocop'],
+    \}
+
     let g:ale_fixers = {
-    \   'ruby': ['rails_best_practices', 'rubocop', 'ruby', 'brakeman', 'reek'],
+    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \   'ruby': ['rubocop'],
     \}
 
     let g:airline#extensions#ale#enabled = 1
+
   Plug 'danchoi/ruby_bashrockets.vim'     " toggle hash style Bashrockets Hashrockets
     " C-j C-k to navigate between errors
 
@@ -305,11 +318,12 @@ call plug#begin('~/.vim/plugged')
   " Saka key
   " Sciruby/rubex
   Plug 'lmeijvogel/vim-yaml-helper'
+  Plug 'ngmy/vim-rubocop'
 call plug#end()
 
-"colorscheme solarized
-colorscheme gruvbox " nice dark theme
-set background=dark
+colorscheme solarized
+"colorscheme gruvbox " nice dark theme
+set background=light
 
 call togglebg#map("<leader>c") " TODO: remove mapping
 
@@ -459,8 +473,8 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>, :nohlsearch<CR>
 
 nnoremap <leader>' :NERDTreeToggle<cr>
-nnoremap <leader>[ :bp<CR>
-nnoremap <leader>] :bn<CR>
+nnoremap <leader>j :bp<CR>
+nnoremap <leader>k :bn<CR>
 nnoremap <leader>? :NERDTreeFind<CR>
 
 " Move smoothly over wrapped lines
@@ -515,23 +529,6 @@ nmap <silent> <leader>g :TestVisit<CR>
 "^W } Preview definition
 "g]   See all definitions
 
-
-" HARD MODE: Disable the arrow and Pg Up/Down keys
-nmap <Left> <Nop>
-nmap <Right> <Nop>
-nmap <Up> <Nop>
-nmap <Down> <Nop>
-
-imap <Left> <Nop>
-imap <Right> <Nop>
-imap <Up> <Nop>
-imap <Down> <Nop>
-
-vmap <Left> <Nop>
-vmap <Right> <Nop>
-vmap <Up> <Nop>
-vmap <Down> <Nop>
-
 " Disable entering Ex mode with Q
 "map Q <Nop>
 
@@ -560,8 +557,6 @@ map <Leader>fp :let @+ = expand("%:p") \| echo '> ' . @+<CR>
 map <Leader>yy :let @+ = expand("%:r") . '.' . expand("%:e") \| echo '> ' . @+<CR>
 map <Leader>yl :let @+ = expand("%:r") . '.' . expand("%:e") . ":" . line(".") \| echo '> ' . @+. ":" . line(".")<CR>
 
-map <Leader>r :redraw!<cr>
-
 "highlight Cursor guifg=white guibg=black
 "highlight iCursor guifg=white guibg=steelblue
 "set guicursor=n-v-c:block-Cursor
@@ -579,16 +574,18 @@ nmap gg ggzz
 nmap <leader>h :!tig %<CR>
 nmap <leader>x :BD<CR>
 nmap <leader>X :bd<CR>
-map <C-n> 20zl
-map <C-b> 20zh
+map <Right> 20zl
+map <Left> 20zh
+map <Up> 5<C-y>
+map <Down> 5<C-e>
 
 map <leader>gb :Gblame<CR>
 map <leader>go :Gbrowse master:%<CR>
 map Q <Esc>
-map <Leader><Left> 5<C-w><
-map <Leader><Right> 5<C-w>>
-map <Leader><Up> 5<C-w>-
-map <Leader><Down> 5<C-w>+
+map <Leader><Left> 10<C-w><
+map <Leader><Right> 10<C-w>>
+map <Leader><Up> 10<C-w>-
+map <Leader><Down> 10<C-w>+
 
 "au BufRead,BufNewFile * let b:start_time=localtime()
 "au CursorHold * call UpdateFile()
@@ -607,5 +604,8 @@ map <Leader><Down> 5<C-w>+
 let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
-map <Leader>r <Plug>SlimeLineSend
+map <Leader><Space> <Plug>SlimeLineSend
 map <Leader>e <Plug>SlimeRegionSend
+nmap <Leader>a :RuboCop<CR>
+nmap <Leader>ff :YamlGetFullPath<CR>
+

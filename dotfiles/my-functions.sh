@@ -70,6 +70,11 @@ ppr() {
   echo "https://github.com/$repo/compare/$current_branch"
 }
 
+grho() {
+  current_branch=`git rev-parse --abbrev-ref HEAD`
+  `git reset origin/$current_branch --hard`
+}
+
 oc() {
   # git remote get-url origin                                                                                     1 ↵
   # git@github.com:receipt-bank/application.git
