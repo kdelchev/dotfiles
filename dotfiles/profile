@@ -1,9 +1,8 @@
 export EDITOR=vim
-export RPROMPT='%{$fg[green]%}[%*]%{$reset_color%}'
 export BUNDLE_PATH=.bundle
-#export BROWSER='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 export FZF_DEFAULT_COMMAND='fd --hidden --type f'
 export DISABLE_SPRING=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 [[ -d ~/bin ]] && export PATH=~/bin:$PATH
 [[ -d /usr/local/sbin ]] && export PATH="/usr/local/sbin:$PATH"
@@ -12,18 +11,16 @@ export DISABLE_SPRING=1
 # Load rbenv automatically by appending the following to ~/.zshrc:
 eval "$(rbenv init -)"
 
-[[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
+#[[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 [[ -r ~/.zsh_profile ]] && source ~/.zsh_profile
-[[ -r ~/.passwords ]] && . ~/.passwords
 [[ -r ~/bin/tmuxinator.zsh ]] && source ~/bin/tmuxinator.zsh
 [[ -r ~/.my-functions.sh ]] && source ~/.my-functions.sh
 
 # https://github.com/jonas/tig/issues/214
-stty dsusp undef
+#stty dsusp undef
 
 alias a='alias'
-a wake-nas='wakeonlan -i 192.168.0.105 00:11:32:E1:CC:6B'
-a kill-puma-dev='date && pkill -USR1 puma-dev'
+a wake-nas='wakeonlan 00:11:32:E1:CC:6B'
 a cag="clear && ag"
 a nospring='spring stop && DISABLE_SPRING=1 &&'
 a db='bin/rails db -p'
@@ -41,7 +38,6 @@ a oppr="open $(ppr)"
 a tig-reflog="git reflog --pretty=raw | tig --pretty=raw"
 a gfix="gc --fixup"
 a reset-test-db="bin/rails db:environment:set RAILS_ENV=test db:drop db:create db:structure:load db:test:prepare"
-a puma-log="tail -f ~/Library/Logs/puma-dev.log"
 a down="youtube-dl --extract-audio --audio-format mp3"
 a wip="ga . && gcmsg 'WIP' -n"
 
@@ -49,8 +45,6 @@ alias kubedemo='kubectl --kubeconfig=/Users/kdelchev/.kube/demo_cluster.yml'
 alias kubestaging='kubectl --kubeconfig=/Users/kdelchev/.kube/staging_cluster.yml'
 alias kubeproduction='kubectl --kubeconfig=/Users/kdelchev/.kube/production_cluster.yml'
 alias kubeinfrastructure='kubectl --kubeconfig=/Users/kdelchev/.kube/infrastructure_cluster.yml'
-
-unalias rg
 
 # pyenv stuff
 

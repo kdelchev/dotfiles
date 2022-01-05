@@ -11,12 +11,13 @@ config/configby.variables.docker.yml
 .git
 .vscode
 
-demo.rb
-jump.rb
-messages.rb
-onetap.rb
-staging.rb
-production.rb
-temp.rb
-query.sql
-jump.sql
+note
+#note/demo.rb
+#note/jump.rb
+#note/messages.rb
+#note/onetap.rb
+#note/staging.rb
+#note/production.rb
+#note/temp.rb
+#note/query.sql
+#note/jump.sql

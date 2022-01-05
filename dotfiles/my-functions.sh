@@ -79,9 +79,8 @@ oc() {
   # git remote get-url origin                                                                                     1 ↵
   # git@github.com:receipt-bank/application.git
 
-  repo_path=`git rev-parse --show-toplevel`
-  repo=`basename $repo_path`
-  open "https://github.com/receipt-bank/$repo/commit/$1"
+  repo=`git config --get remote.origin.url | sed 's/\.git$//' | cut -d':' -f2-`
+  open "https://github.com/$repo/commit/$1"
 }
 
 vim-line() {
