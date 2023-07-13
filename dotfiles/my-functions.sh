@@ -39,10 +39,10 @@ squash-commits() {
   #!/bin/bash
 
   export remote=origin
-  export master_branch=master
+  export master_branch=main
   export staging_branch=staging
   export current_branch=$(git rev-parse --abbrev-ref HEAD)
-  export number_of_commits=$(git log master..$current_branch --pretty=oneline | wc -l | sed 's/ //g')
+  export number_of_commits=$(git log main..$current_branch --pretty=oneline | wc -l | sed 's/ //g')
   export squash_branch=squash_$(date +%Y%m%d%H%M%S)
 
   # Create squash branch $squash_branch
@@ -64,6 +64,10 @@ squash-commits() {
 }
 
 # Print Pull Request
+oppr() {
+  open `ppr`
+}
+
 ppr() {
   repo=`git config --get remote.origin.url | sed 's/\.git$//' | cut -d':' -f2-`
   current_branch=`git rev-parse --abbrev-ref HEAD`
@@ -107,4 +111,24 @@ fssh() {
 
 ct() {
   ctags -R -f ./.git/tags .
+}
+
+staging-tunnel() {
+  scalingo --app staging db-tunnel $SCALINGO_POSTGRESQL_URL
+}
+
+dump-staging-db() {
+  pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file ~/Downloads/dump.pgsql
+}
+
+disconnect-db() {
+  psql -d postgres -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'development';"
+  psql -d postgres -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'test';"
+}
+
+import-staging-db() {
+  # psql -d postgres -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'development';"
+  disconnect-db
+  DISABLE_DATABASE_ENVIRONMENT_CHECK=1 rails db:drop db:create
+  pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname postgres://localhost:5432/development ~/Downloads/dump.pgsql
 }

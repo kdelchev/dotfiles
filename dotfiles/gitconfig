@@ -4,27 +4,20 @@
 
 [push]
   default = simple
+  autoSetupRemote = true
 
 [core]
-	excludesfile = /Users/kdelchev/.gitignore
+  excludesfile = /Users/kdelchev/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
+  autocrlf = false
 
 [credential]
   helper = osxkeychain
 
-[merge]
-  ff = no
-  tool = kdiff3
-
 [mergetool]
   keepBackup = false
 
-[mergetool "kdiff3"]
-  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-  trustExitCode = false
-
 [diff]
-  tool = kdiff3
   algorithm = patience
   renameLimit = 0
   renames = true
@@ -35,36 +28,14 @@
 [rerere]
   enabled = true
 
-[rebase]
-  autosquash = true
-
 [pull]
   rebase = preserve
 
 [color]
   ui = auto
+
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
+
 [commit]
-	gpgsign = true
-	template = /Users/kdelchev/.stCommitMsg
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 82
-
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  gpgsign = true

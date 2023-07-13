@@ -1,23 +1,8 @@
-# Mac OS X - specific files:
-.DS_Store
+note.rb
+staging.rb
+staging.sql
+production.rb
+preprod.rb
+data.rb
 
-# Sublime Text - specific files:
-start_server.sh
-.irbrc
-tags
-config/configby.variables.docker.yml
-
-.bundle
-.git
-.vscode
-
-note
-#note/demo.rb
-#note/jump.rb
-#note/messages.rb
-#note/onetap.rb
-#note/staging.rb
-#note/production.rb
-#note/temp.rb
-#note/query.sql
-#note/jump.sql
+.tinyb
